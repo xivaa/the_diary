@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_200146) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_200533) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +72,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_200146) do
     t.index ["goal_id"], name: "index_habits_on_goal_id"
   end
 
+  create_table "puzzles", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_puzzles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -91,4 +100,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_200146) do
   add_foreign_key "days", "habits"
   add_foreign_key "goals", "users"
   add_foreign_key "habits", "goals"
+  add_foreign_key "puzzles", "users"
 end

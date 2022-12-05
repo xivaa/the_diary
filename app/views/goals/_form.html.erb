@@ -1,0 +1,7 @@
+<%= simple_form_for(goal) do |f| %>
+  <%= f.input :name, input_html: {class: ""} %>
+  <%= f.input :description, input_html: {class: "search-bar"} %>
+  <%= f.input :start_date, as: :date, input_html: {class: "search-bar"} %>
+  <%= f.input :end_date, as: :date, input_html: {class: "search-bar"} %>
+  <%= f.submit class: "btn btn-secondary" %>
+<% end %>
