@@ -6,4 +6,14 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def dashboard
+    @goals = current_user.goals
+    @habits = current_user.habits
+    @user = current_user
+    authorize @user
+  end
+
+  def contact
+  end
 end
