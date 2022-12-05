@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_200146) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_202143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_200146) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "puzzle_id", null: false
+    t.index ["puzzle_id"], name: "index_goals_on_puzzle_id"
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
@@ -70,6 +72,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_200146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["goal_id"], name: "index_habits_on_goal_id"
+  end
+
+  create_table "puzzles", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_puzzles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,6 +100,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_200146) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "days", "habits"
+  add_foreign_key "goals", "puzzles"
   add_foreign_key "goals", "users"
   add_foreign_key "habits", "goals"
+  add_foreign_key "puzzles", "users"
 end
