@@ -1,6 +1,7 @@
 class GoalsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
+  before_action :set_puzzle, only: [:new, :create]
 
   def index
     @goals = Goal.all
@@ -58,5 +59,9 @@ class GoalsController < ApplicationController
 
   def set_goal
     @goal = Goal.find(params[:id])
+  end
+
+  def set_puzzle
+    @puzzle = Puzzle.find(params[:puzzle_id])
   end
 end
