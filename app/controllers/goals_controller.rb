@@ -4,18 +4,22 @@ class GoalsController < ApplicationController
 
   def index
     @goals = Goal.all
+    @goals = policy_scope(Goal)
   end
 
   def show
+    authorize @goal
   end
 
   def new
     @goal = Goal.new
+    authorize @goal
   end
 
   def create
     @goal = Goal.new(goal_params)
     @goal.user = current_user
+    authorize @goal
     if @goal.save
       redirect_to goal_path(@goal)
     else
@@ -24,14 +28,17 @@ class GoalsController < ApplicationController
   end
 
   def edit
+    authorize @goal
   end
 
   def update
+    authorize @goal
     @goal.update(goal_params)
     redirect_to goal_path(@goal)
   end
 
   def destroy
+    authorize @goal
     @goal.destroy
     redirect_to goals_path
   end
