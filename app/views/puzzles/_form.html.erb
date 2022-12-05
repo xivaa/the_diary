@@ -1,5 +1,5 @@
-<%= simple_form_for(goal) do |f| %>
+<%= simple_form_for(puzzle) do |f| %>
   <%= f.input :title, input_html: {class: ""} %>
-  <%= f.date :date, value: Date.today %>
+  <%= f.date_field :date, value: Date.today %>
   <%= f.submit class: "btn btn-secondary" %>
 <% end %>

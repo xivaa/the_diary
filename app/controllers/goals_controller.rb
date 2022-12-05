@@ -1,7 +1,7 @@
 class GoalsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
-  before_action :set_puzzle, only: [:new, :create]
+  # before_action :set_puzzle, only: [:new, :create]
 
   def index
     @goals = Goal.all
@@ -20,6 +20,7 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
     @goal.user = current_user
+    @goal.puzzle = Puzzle.last
     authorize @goal
     if @goal.save
       redirect_to goal_path(@goal)
@@ -54,7 +55,7 @@ class GoalsController < ApplicationController
   private
 
   def goal_params
-    params.require(:goal).permit(:name, :description, :start_date, :end_date)
+    params.require(:goal).permit(:name, :description, :start_date, :end_date, :puzzle_id)
   end
 
   def set_goal

@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   def dashboard
     @goals = current_user.goals
     @habits = current_user.habits
+    @puzzles = current_user.puzzles
     @user = current_user
   end
 

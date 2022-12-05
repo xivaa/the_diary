@@ -1,1 +1,23 @@
 <h2>dashboard</h2>
+<% @goals.each do |g| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= g.name %></h5>
+      <p class="card-text"><%= g.description %></p>
+
+      <%= link_to "edit", edit_goal_path(g), class: "btn btn-primary" %>
+      <%= link_to "delete", goal_path(g), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    </div>
+  </div>
+<% end %>
+
+<% @puzzles.each do |p| %>
+  <% p.goals.each do |goal| %>
+    <h5><%= goal.name %></h5>
+   <% end %>
+ <% end %>
+
+
+<%= link_to "ADD NEW GOAL", new_goal_path, class: "btn btn-secondary"%>
+
+<%= link_to "add a puzzle", new_puzzle_path, class: "btn btn-primary" %>
