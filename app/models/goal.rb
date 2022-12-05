@@ -1,5 +1,6 @@
 class Goal < ApplicationRecord
   belongs_to :user
+  belongs_to :puzzle
   has_many :habits
 
   validates :name, presence: true
@@ -7,3 +8,4 @@ class Goal < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 end
+
