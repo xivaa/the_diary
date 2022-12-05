@@ -22,8 +22,9 @@ class GoalsController < ApplicationController
     authorize @goal
     if @goal.save
       redirect_to goal_path(@goal)
+      flash.alert = "Goal created successfully"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -33,14 +34,20 @@ class GoalsController < ApplicationController
 
   def update
     authorize @goal
-    @goal.update(goal_params)
-    redirect_to goal_path(@goal)
+    if @goal.update(goal_params)
+      redirect_to goal_path(@goal)
+      flash.alert = "Goal updated successfully"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+
   end
 
   def destroy
     authorize @goal
     @goal.destroy
     redirect_to goals_path
+    flash.alert = "Goal deleted successfully"
   end
 
   private

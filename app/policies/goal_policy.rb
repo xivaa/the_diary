@@ -4,6 +4,7 @@ class GoalPolicy < ApplicationPolicy
     def resolve
       scope.where(user: user)
     end
+  end
 
     def show?
       true
@@ -20,5 +21,4 @@ class GoalPolicy < ApplicationPolicy
     def destroy?
       record.user == user
     end
-  end
 end
