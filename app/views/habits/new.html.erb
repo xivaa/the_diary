@@ -4,7 +4,7 @@
       <%= simple_form_for([@goal, @habit]) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
-      <%= f.input :frequency, collection: %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday], input_html: {class: "search-bar"} %>
+      <%= f.input :frequency, as: :check_boxes, collection: %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday], input_html: {class: "search-bar"} %>
       <%= f.association :goal, collection: @goals %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>

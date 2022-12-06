@@ -4,8 +4,8 @@
 <%= @goal.description %>
 <%= @goal.end_date %>
 
-<%= link_to "edit", edit_goal_path(@goal) %>
+<%= link_to "Edit", edit_goal_path(@goal) %>
  <%= link_to "Add Habit", new_goal_habit_path(@goal) %>
-<%= link_to "Back to my list", goals_path %>
-<%= link_to "delete", goal_path(@goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
+<%= link_to "Back", dashboard_path %>
+<%= link_to "Delete", goal_path(@goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
 </div>
