@@ -5,10 +5,10 @@
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :frequency, collection: %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday], input_html: {class: "search-bar"} %>
-      <%= f.input :goal_id, as: :hidden, input_html: { value: @goal.id } %>
+      <%= f.association :goal, collection: @goals %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
 
-    <%= link_to "Back", goal_path(@goal) %>
+    <%# <%= link_to "Back", goal_path(@goal) %>
   </div>
 </div>

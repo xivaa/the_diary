@@ -1,0 +1,33 @@
+<%# <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="center-modal">
+  <div class="pop-up text-center">
+    <h2>new goal</h2>
+    <%= render "goals/form", goal: @goal %>
+    <%# <%= link_to "Back to my list", goals_path, class: "btn btn-secondary mt-3" %>
+  <%# </div>
+</div>  %>
+<%# <%= link_to "+", new_goal_path, class: "btn btn-plus", data: {bs_toggle: "modal", bs_target: "#center-modal"}%>
+
+<button type="button" class="btn btn-plus" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  +
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add new Goal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="pop-up text-center">
+          <%= render "goals/form", goal: @goal %>
+          <%= link_to "Back to my list", goals_path, class: "btn btn-secondary mt-3" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

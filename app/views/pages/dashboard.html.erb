@@ -1,6 +1,6 @@
 <div class="container col-12 text-center">
 <h2>dashboard</h2>
-
+<div class="puzzle">
 <% @puzzles.each do |p| %>
   <% p.goals.each do |goal| %>
       <div class="pop-up">
@@ -15,6 +15,18 @@
      </div>
  <% end %>
 <% end %>
+</div>
+
+<div class="habits">
+  <% @habits.each do |h| %>
+    <div class="pop-up">
+      <h5><%= h.name %></h5>
+      <p><%= h.description %></p>
+      <p><%= h.frequency %></p>
+   </div>
+  <% end %>
+
+</div>
 
 <%# trying to put the edit and new form into a popup %>
   <%# <div class="pop-up text-center ">

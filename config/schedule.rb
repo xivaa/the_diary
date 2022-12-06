@@ -13,8 +13,9 @@
 #   rake "some:great:rake:task"
 # end
 #
-every 1.days do
+every '0 0 * * *', at: '10:00 am' do
   runner Puzzle.create_a_new_puzzle
 end
+
 
 # Learn more: http://github.com/javan/whenever

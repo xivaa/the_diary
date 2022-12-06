@@ -2,13 +2,19 @@ class HabitsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create destroy]
   before_action :set_habit, only: [:destroy]
 
+  def show
+    authorize @habit
+  end
+
   def new
     @habit = Habit.new
+    @goals = current_user.goals
+    authorize @habit
   end
 
   def create
     @habit = Habit.new(habit_params)
-    @habit.user = current_user
+    authorize @habit
     if @habit.save
       redirect_to goal_path(@habit)
     else
@@ -17,6 +23,7 @@ class HabitsController < ApplicationController
   end
 
   def destroy
+    authorize @habit
     @habit.destroy
     redirect_to goals_path
   end
@@ -24,7 +31,7 @@ class HabitsController < ApplicationController
   private
 
   def habit_params
-    params.require(:habit).permit(:name, :description, :frequency)
+    params.require(:habit).permit(:name, :description, :frequency, :goal_id)
   end
 
   def set_habit
