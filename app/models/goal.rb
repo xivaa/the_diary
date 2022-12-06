@@ -7,4 +7,5 @@ class Goal < ApplicationRecord
   validates :description, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+  # validates_length_of :habits, maximum: 5
 end
