@@ -1,6 +1,6 @@
 <div class="container col-12 text-center mb-5">
 <h2>dashboard</h2>
-<div class="puzzle">
+<%# <div class="puzzle"> %>
 <% @puzzles.each do |p| %>
   <% p.goals.each do |goal| %>
       <div class="pop-up">
@@ -16,7 +16,7 @@
      </div>
  <% end %>
 <% end %>
-</div>
+<%# </div> %>
 
 <div class="habits">
   <% @habits.each do |h| %>
