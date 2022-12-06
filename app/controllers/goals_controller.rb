@@ -48,7 +48,7 @@ class GoalsController < ApplicationController
   def destroy
     authorize @goal
     @goal.destroy
-    redirect_to goals_path
+    redirect_to dashboard_path
     flash.alert = "Goal deleted successfully"
   end
 
