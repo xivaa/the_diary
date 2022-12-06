@@ -15,6 +15,7 @@ class HabitsController < ApplicationController
   def create
     @habit = Habit.new(habit_params)
     authorize @habit
+    @habit.frequency.shift
     if @habit.save
       redirect_to goal_path(@habit)
     else
@@ -31,7 +32,7 @@ class HabitsController < ApplicationController
   private
 
   def habit_params
-    params.require(:habit).permit(:name, :description, :frequency, :completed, :goal_id)
+    params.require(:habit).permit(:name, :description, :completed, :goal_id, frequency: [])
   end
 
   def set_habit
