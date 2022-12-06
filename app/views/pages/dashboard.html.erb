@@ -7,11 +7,11 @@
         <h5><%= goal.name %></h5>
         <p><%= goal.description %></p>
         <p><%= goal.end_date %></p>
-        <div class="links d-flex flex-row gap-2">
-        <%= render partial: "shared/editpopup", locals: { goal: goal }%>
+        <div class="links d-flex flex-row gap-2 align-items-center">
         <%# <%= link_to "edit", edit_goal_path(goal), class: "btn btn-primary"%>
+        <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
         <%= link_to "see this goal", goal_path(goal), class: "btn btn-primary" %>
-        <%= link_to "delete", goal_path(goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
+        <%= render partial: "shared/editpopup", locals: { goal: goal }%>
       </div>
      </div>
  <% end %>
