@@ -13,40 +13,20 @@ class Puzzle < ApplicationRecord
     Goal.where(puzzle: self)
   end
 
-  def habits
-    Habit.where(puzzle: self)
-  end
-
   def completed_goals
     goals.where(completed: true)
   end
 
-  def completed_habits
-    habits.where(completed: true)
-  end
-
   def completed_goals_percentage
     if goals.count > 0
-      (completed_goals.count.to_f / goals.count.to_f) * 100
+      (completed_goals.count.to_f / goals.count) * 100
     else
       0
     end
-  end
-
-  def completed_habits_percentage
-    if habits.count > 0
-      (completed_habits.count.to_f / habits.count.to_f) * 100
-    else
-      0
-    end
-  end
-
-  def completed_percentage
-    (completed_goals_percentage + completed_habits_percentage) / 2
   end
 
   def completed?
-    completed_percentage == 100
+    completed_goals_percentage == 100
   end
 
   def create_a_new_puzzle
