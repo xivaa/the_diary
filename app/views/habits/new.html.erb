@@ -5,7 +5,7 @@
       <%= f.input :name %>
       <%= f.input :description %>
       <p>Which days are you doing it?</p>
-      <%= f.collection_check_boxes :frequency, [["Monday", "Monday"], ["Tuesday", "Tuesday"], ["Wednesday", "Wednesday"], ["Thursday", "Thursday"], ["Friday", "Friday"], ["Saturday", "Saturday"], ["Sunday", "Sunday"]], :first, :last %>
+      <%= f.input :frequency, as: :check_boxes, collection: [["Monday", "Monday"], ["Tuesday", "Tuesday"], ["Wednesday", "Wednesday"], ["Thursday", "Thursday"], ["Friday", "Friday"], ["Saturday", "Saturday"], ["Sunday", "Sunday"]] %>
       <%= f.association :goal, collection: @goals %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>

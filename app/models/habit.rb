@@ -3,4 +3,5 @@ class Habit < ApplicationRecord
   has_many :days
 
   validates_associated :goal
+  validates :frequency, presence: true
 end
