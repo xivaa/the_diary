@@ -1,0 +1,11 @@
+<% if @puzzle.completed_goals.size == 0 %>
+  <%= "empty puzzle" %>
+<% elsif @puzzle.completed_goals.size == 1 %>
+  <%= "puzzle with 1 piece" %>
+<% elsif @puzzle.completed_goals.size == 2 %>
+  <%= "puzzle with 2 pieces" %>
+<% elsif @puzzle.completed_goals.size == 3 %>
+  <%= "puzzle with 3 pieces" %>
+<% else %>
+  <%= "puzzle completed" %>
+<% end %>

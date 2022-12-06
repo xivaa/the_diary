@@ -1,4 +1,4 @@
-<div class="container col-12 text-center">
+<div class="container col-12 text-center mb-5">
 <h2>dashboard</h2>
 <div class="puzzle">
 <% @puzzles.each do |p| %>
@@ -9,7 +9,7 @@
         <p><%= goal.end_date %></p>
         <div class="links d-flex flex-row gap-2">
         <%= render partial: "shared/editpopup", locals: { goal: goal }%>
-        <%# <%= link_to "edit", edit_goal_path(goal), class: "btn btn-primary"%> 
+        <%# <%= link_to "edit", edit_goal_path(goal), class: "btn btn-primary"%>
         <%= link_to "see this goal", goal_path(goal), class: "btn btn-primary" %>
         <%= link_to "delete", goal_path(goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
       </div>
@@ -28,6 +28,11 @@
   <% end %>
 
 </div>
+
+<% @puzzles.each do |p| %>
+  <%= link_to "see my puzzle", puzzle_path(p)  %>
+<% end %>
+
 <%= link_to "ADD NEW GOAL", new_goal_path, class: "btn btn-secondary"%>
 
 <%= link_to "add a puzzle", new_puzzle_path, class: "btn btn-primary" %>
