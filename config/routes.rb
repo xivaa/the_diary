@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   resources :goals do
     resources :habits, only: %i[new create]
   end
+
+  resources :habits, only: [:update]
 end
