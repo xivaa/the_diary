@@ -9,6 +9,7 @@ class HabitsController < ApplicationController
   def new
     @habit = Habit.new
     @goals = current_user.goals
+    @goal = Goal.find(params[:goal_id])
     authorize @habit
   end
 
@@ -17,7 +18,7 @@ class HabitsController < ApplicationController
     authorize @habit
     @habit.frequency.shift
     if @habit.save
-      redirect_to goal_path(@habit)
+      redirect_to dashboard_path
     else
       render :new
     end
