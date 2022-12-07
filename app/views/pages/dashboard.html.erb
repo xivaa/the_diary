@@ -2,37 +2,41 @@
   <div class="puzzle">
   <%= link_to "Your progress", puzzles_path %>
 </div>
-  <h2 class="text-center">Habits</h2>
-
-  <div class="checkbox-dashboard d-flex justify-content-around">
-    <div class="habits ">
-      <% @habits.each do |h| %>
-        <div class="habits-content">
-          <%= h.name %>
+<div class="habits-container">
+    <h2 class="text-center">Habits</h2>
+    <div class="checkbox-dashboard d-flex justify-content-around">
+      <div class="habits ">
+        <% @habits.each do |h| %>
+          <div class="habits-content">
+            <%= h.name %>
+        </div>
       </div>
+      <input type="checkbox">
+        <% end %>
     </div>
-    <input type="checkbox">
-      <% end %>
-  </div>
-  <div class="goal-container">
-    <h2 class="text-center">Goals</h2>
-    <div class="goal-dashboard">
-    <% @puzzles.each do |p| %>
-      <% p.goals.each do |goal| %>
-          <div class="goals">
-            <%=link_to goal.name, goal_path(goal), class: "goal-link" %>
-          </div>
-          <div class="goal-icons">
-            <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
-            <%= render partial: "shared/editpopup", locals: { goal: goal }%>
-          </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.completed_habits_percentage%>%"><%= goal.completed_habits_percentage.round%>%</div>
-          </div>
-    <% end %>
-    <% end %>
+</div>
+
+
+  <h2 class="text-center">Goals</h2>
+  <div class="goal-dashboard">
+    <div class="goal-info">
+      <% @puzzles.each do |p| %>
+        <% p.goals.each do |goal| %>
+            <div class="goals">
+              <%=link_to goal.name, goal_path(goal), class: "goal-link" %>
+            </div>
+            <div class="goal-icons">
+              <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
+              <%= render partial: "shared/editpopup", locals: { goal: goal }%>
+            </div>
     </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.completed_habits_percentage%>%"><%= goal.completed_habits_percentage.round%>%</div>
+        </div>
+  <% end %>
+  <% end %>
   </div>
+
 </div>
 <% @puzzles.each do |p| %>
   <%= link_to "see my puzzle", puzzle_path(p)  %>
