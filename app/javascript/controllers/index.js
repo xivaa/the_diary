@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import HabitUpdateController from "./habit_update_controller"
+application.register("habit-update", HabitUpdateController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
