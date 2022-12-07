@@ -9,6 +9,7 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @goal.is_completed? ? @goal.complete! : @goal.incomplete!
     authorize @goal
   end
 
@@ -65,4 +66,6 @@ class GoalsController < ApplicationController
   def set_puzzle
     @puzzle = Puzzle.find(params[:puzzle_id])
   end
+
+
 end

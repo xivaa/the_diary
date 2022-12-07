@@ -7,6 +7,7 @@
         <h5><%= goal.name %></h5>
         <p><%= goal.description %></p>
         <p><%= goal.end_date %></p>
+        <p><%= goal.completed %></p>
         <div class="links d-flex flex-row gap-2 align-items-center">
         <%# <%= link_to "edit", edit_goal_path(goal), class: "btn btn-primary"%>
         <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
@@ -17,6 +18,7 @@
  <% end %>
 <% end %>
 <%# </div> %>
+
 <div class="checkbox-dashboard d-flex justify-content-around">
   <div class="habits ">
     <% @habits.each do |h| %>

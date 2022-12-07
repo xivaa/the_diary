@@ -24,7 +24,17 @@ class Goal < ApplicationRecord
     end
   end
 
-  def completed?
-    @goal.completed = true if completed_habits_percentage == 100
+  def is_completed?
+    completed_habits_percentage == 100
+  end
+
+  def complete!
+    self.completed = true
+    self.save
+  end
+
+  def incomplete!
+    self.completed = false
+    self.save
   end
 end
