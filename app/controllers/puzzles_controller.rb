@@ -32,6 +32,4 @@ class PuzzlesController < ApplicationController
   def puzzle_params
     params.require(:puzzle).permit(:title, :date, :user_id, :photo)
   end
-
-
 end
