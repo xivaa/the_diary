@@ -1,34 +1,33 @@
-<div class="container col-12 text-center mb-5">
-<h2>dashboard</h2>
-<%# <div class="puzzle"> %>
-<% @puzzles.each do |p| %>
-  <% p.goals.each do |goal| %>
-      <div class="pop-up">
-        <h5><%= goal.name %></h5>
-        <p><%= goal.description %></p>
-        <p><%= goal.end_date %></p>
-        <div class="links d-flex flex-row gap-2 align-items-center">
-        <%# <%= link_to "edit", edit_goal_path(goal), class: "btn btn-primary"%>
-        <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
-        <%= link_to "see this goal", goal_path(goal), class: "btn btn-primary" %>
-        <%= render partial: "shared/editpopup", locals: { goal: goal }%>
+<div class="container col-12">
+  <h2 class="text-center">Habits</h2>
+
+  <div class="checkbox-dashboard d-flex justify-content-around">
+    <div class="habits ">
+      <% @habits.each do |h| %>
+        <div class="habits-content">
+          <%= h.name %>
       </div>
-     </div>
- <% end %>
-<% end %>
-<%# </div> %>
-<div class="checkbox-dashboard d-flex justify-content-around">
-  <div class="habits ">
-    <% @habits.each do |h| %>
-      <div class="habits-content">
-        <h5><%= h.name %></h5>
+    </div>
+    <input type="checkbox">
+      <% end %>
+  </div>
+  <div class="goal-container">
+    <h2 class="text-center">Goals</h2>
+    <div class="goal-dashboard">
+    <% @puzzles.each do |p| %>
+      <% p.goals.each do |goal| %>
+          <div class="goals">
+            <%=link_to goal.name, goal_path(goal), class: "goal-link" %>
+          </div>
+          <div class="goal-icons">
+            <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
+            <%= render partial: "shared/editpopup", locals: { goal: goal }%>
+          </div>
+    <% end %>
+    <% end %>
     </div>
   </div>
-  <input type="checkbox">
-    <% end %>
 </div>
-
-
 <% @puzzles.each do |p| %>
   <%= link_to "see my puzzle", puzzle_path(p)  %>
 <% end %>
@@ -36,4 +35,3 @@
 <%= link_to "ADD NEW GOAL", new_goal_path, class: "btn btn-secondary"%>
 
 <%= link_to "add a puzzle", new_puzzle_path, class: "btn btn-gradient" %>
-</div>

@@ -10,3 +10,25 @@ padding-bottom: 10px;
   text-align: center;
   justify-content: start;
 }
+
+.goal-dashboard {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.goal-link {
+  text-decoration: none;
+  color: black;
+}
+
+.goal-link:hover {
+  color: gray;
+}
+
+.goal-container {
+  border-radius: 15px;
+  background-color: white;
+}

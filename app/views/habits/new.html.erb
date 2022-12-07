@@ -1,3 +1,6 @@
+<% if @goal.reach_limit? %>
+  <p>You cant add more than 5 habits</p>
+<% else %>
 <div class="container">
   <div class="popup">
     <h2>New Habit</h2>
@@ -14,3 +17,4 @@
   </div>
 </div>
 <%# collection: %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday], input_html: {class: "select multiselect", multiple: true, id: "tom-select-it"} %>
+<% end %>

@@ -1,4 +1,5 @@
 class Goal < ApplicationRecord
+  include ActiveModel::Validations
   belongs_to :user
   belongs_to :puzzle
   has_many :habits, dependent: :destroy
@@ -26,5 +27,9 @@ class Goal < ApplicationRecord
 
   def completed?
     @goal.completed = true if completed_habits_percentage == 100
+  end
+
+  def reach_limit?
+    habits.size >= 5
   end
 end
