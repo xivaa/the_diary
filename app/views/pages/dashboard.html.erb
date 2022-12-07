@@ -19,18 +19,17 @@
 <% end %>
 <%# </div> %>
 
-<div class="habits">
-  <% @habits.each do |h| %>
-    <div class="pop-up">
-      <h5><%= h.name %></h5>
-      <p><%= h.description %></p>
-      <p><%= h.frequency %></p>
-      <p><%= h.goal.name %></p>
-      <p><%= h.completed %></p>
-   </div>
-  <% end %>
-
+<div class="checkbox-dashboard d-flex justify-content-around">
+  <div class="habits ">
+    <% @habits.each do |h| %>
+      <div class="habits-content">
+        <h5><%= h.name %></h5>
+    </div>
+  </div>
+  <input type="checkbox">
+    <% end %>
 </div>
+
 
 <% @puzzles.each do |p| %>
   <%= link_to "see my puzzle", puzzle_path(p)  %>
@@ -38,5 +37,5 @@
 
 <%= link_to "ADD NEW GOAL", new_goal_path, class: "btn btn-secondary"%>
 
-<%= link_to "add a puzzle", new_puzzle_path, class: "btn btn-primary" %>
+<%= link_to "add a puzzle", new_puzzle_path, class: "btn btn-gradient" %>
 </div>

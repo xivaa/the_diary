@@ -10,3 +10,9 @@
   font-size: xx-large;
   z-index: 1000;
 }
+
+.btn-gradient {
+ background: linear-gradient(35deg, #F05454 25%, #F05454 25%, #FFBF00 75%, #FFBF00 75%);
+ border-radius: 8px;
+ color: white;
+}
