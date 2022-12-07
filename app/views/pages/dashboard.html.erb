@@ -1,6 +1,8 @@
 <div class="container col-12 text-center mb-5">
 <h2>dashboard</h2>
-<%# <div class="puzzle"> %>
+<div class="puzzle">
+  <%= link_to "Your progress", puzzles_path %>
+</div>
 <% @puzzles.each do |p| %>
   <% p.goals.each do |goal| %>
       <div class="pop-up">
@@ -14,6 +16,9 @@
         <%= link_to "see this goal", goal_path(goal), class: "btn btn-primary" %>
         <%= render partial: "shared/editpopup", locals: { goal: goal }%>
       </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.completed_habits_percentage%>%"><%= goal.completed_habits_percentage.round%>%</div>
+        </div>
      </div>
  <% end %>
 <% end %>
