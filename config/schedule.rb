@@ -1,3 +1,4 @@
+set :environment, "development"
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
@@ -13,8 +14,8 @@
 #   rake "some:great:rake:task"
 # end
 #
-every '0 0 * * *', at: '10:00 am' do
-  runner Puzzle.create_a_new_puzzle
+every 1.day, at: '12:00 pm' do
+  runner "Puzzle.create_a_new_puzzle"
 end
 
 
