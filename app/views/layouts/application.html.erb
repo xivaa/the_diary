@@ -12,10 +12,11 @@
   </head>
 
   <body>
-    <%= yield %>
-    <%= render "shared/flashes" %>
-
     <%= render "shared/navbar" %>
     <%= render "shared/newgoal" %>
+    <%= yield %>
+
+    <%= render "shared/flashes" %>
+
   </body>
 </html>
