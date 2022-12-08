@@ -1,0 +1,14 @@
+
+<% if @puzzle.goals.size == 1 %>
+  <%= render "puzzle1" %>
+<% elsif @puzzle.goals.size == 2 %>
+  <%= render "puzzle2" %>
+<% elsif @puzzle.goals.size == 3 %>
+  <%= render "puzzle3" %>
+<% elsif @puzzle.goals.size == 4 %>
+  <%= render "puzzle4" %>
+<% elsif @puzzle.goals.size == 5 %>
+  <%= render "puzzle5" %>
+<% else %>
+  <%= "No goals today" %>
+<% end %>

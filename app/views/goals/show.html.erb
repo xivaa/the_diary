@@ -1,0 +1,24 @@
+<div class="pop-up">
+<h2>show goal</h2>
+<%= @goal.name %>
+<%= @goal.description %>
+<%= @goal.end_date %>
+<%= @goal.completed %>
+
+<div class="habits">
+  <% @goal.habits.each do |h| %>
+    <div class="pop-up">
+      <h5><%= h.name %></h5>
+      <p><%= h.description %></p>
+      <p><%= h.frequency %></p>
+      <p><%= h.completed %></p>
+   </div>
+  <% end %>
+
+</div>
+
+<%= link_to "Edit", edit_goal_path(@goal) %>
+ <%= link_to "Add Habit", new_goal_habit_path(@goal) %>
+<%= link_to "Back", dashboard_path %>
+<%= link_to "Delete", goal_path(@goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
+</div>
