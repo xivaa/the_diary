@@ -21,10 +21,7 @@
     <h2 class="text-left ms-4 mt-3 pt-2 pb-2">Today's Habits</h2>
     <div class="habits-info" data-controller="habit-update">
       <% @habits.each do |h| %>
-          <div class="habits" data-habit-update-habit-id-value="<%= h.id %>">
-                  <%= h.name %>
-                <input type="checkbox" data-action="change->habit-update#update">
-          </div>
+         <%= render "habits/habits_checkbox", h: h %>
             <% end %>
     </div>
   </div>
@@ -40,7 +37,7 @@
             <div class="goals-card">
                 <%=link_to goal.name, goal_path(goal), class: "goal-link" %>
                 <div class="goal-icons">
-                  <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
+                  <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
                   <%= render partial: "shared/editpopup", locals: { goal: goal }%>
                 </div>
             </div>

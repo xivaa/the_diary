@@ -17,6 +17,7 @@
 .habits {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: whitesmoke;
   border-radius: 15px;
   margin-inline: 10px;
@@ -32,6 +33,7 @@
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 0px 5px gray;
+  margin-bottom: 10px;
 }
 
 .goals-card {
@@ -53,4 +55,38 @@
   margin-inline: 10px;
   padding-inline: 10px;
   margin-bottom: 5px;
+}
+
+.checkbox {
+background-color: transparent;
+height: 40px;
+width: 40px;
+border: 2px solid black;
+padding-top: 18px;
+}
+
+.form-check-input[type="checkbox"] {
+border-radius: .65em;
+}
+
+.form-check-input {
+  margin-top: 1.10em;
+}
+
+.form-check-input.is-valid:checked {
+  background-color: #FA9D2A;
+  border-color: transparent;
+}
+
+.form-check-input:checked {
+  background-color: #FA9D2A;
+  border-color: transparent;
+}
+
+.habits h5 {
+  font-size: 21px;
+}
+
+.goals-card h5 {
+  font-size: 21px;
 }
