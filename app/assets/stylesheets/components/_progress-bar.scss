@@ -1,6 +1,5 @@
 .progress {
   width: 100%;
-  margin-top: 10px;
   --#{$prefix}progress-height: #{$progress-height};
   @include rfs($progress-font-size, --#{$prefix}progress-font-size);
   --#{$prefix}progress-bg: #{$progress-bg};

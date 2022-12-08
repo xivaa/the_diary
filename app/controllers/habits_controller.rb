@@ -27,7 +27,17 @@ class HabitsController < ApplicationController
   def destroy
     authorize @habit
     @habit.destroy
-    redirect_to goals_path
+  end
+
+  def update
+    @habit = Habit.find(params[:id])
+    authorize @habit
+    @habit.completed = habit_params[:completed] == "1"
+    @habit.save
+    respond_to do |format|
+      format.html
+      format.text { render partial: "habits/habits_checkbox", locals: { h: @habit }, formats: [:html] }
+    end
   end
 
   private

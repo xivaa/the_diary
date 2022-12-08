@@ -6,4 +6,8 @@ class Habit < ApplicationRecord
   validates :description, presence: true
   validates_associated :goal
   validates :frequency, presence: true
+
+  # respond_to do |format|
+  #   format.html
+  # end
 end
