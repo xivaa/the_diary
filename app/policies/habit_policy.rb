@@ -17,4 +17,8 @@ class HabitPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def update?
+    record.goal.user == user
+  end
 end

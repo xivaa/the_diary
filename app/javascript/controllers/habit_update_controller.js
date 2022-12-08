@@ -8,13 +8,21 @@ export default class extends Controller {
   connect() {
   }
 
-  update(e) {
-    console.log(e.target.id)
-    fetch(`/habits/${e.target.id}`,
+  submitForm(e) {
+    e.preventDefault()
+    console.log("hola")
+    fetch(`/habits/${e.target.action}`,
     {
       method: "PATCH",
       headers: {"Accept": "text/plain"},
-      body: new FormData(this.formTarget)
+      body: new FormData(e.target)
     }).then(response => response.text())
-    }
+    .then(data => console.log(data))
+    
   }
+
+  update(e) {
+    e.target.form.submit()
+  }
+
+}

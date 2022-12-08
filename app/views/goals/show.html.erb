@@ -1,24 +1,28 @@
-<div class="pop-up">
-<h2>show goal</h2>
-<%= @goal.name %>
-<%= @goal.description %>
-<%= @goal.end_date %>
-<%= @goal.completed %>
+  <div class="goal-headline mt-4 mb-4">
+    <h2 class="text-center"><%= @goal.name %></h2>
+  </div>
 
-<div class="habits">
-  <% @goal.habits.each do |h| %>
-    <div class="pop-up">
-      <h5><%= h.name %></h5>
-      <p><%= h.description %></p>
-      <p><%= h.frequency %></p>
-      <p><%= h.completed %></p>
-   </div>
-  <% end %>
+  <div class="goal-specifics">
+    <%= @goal.description %>
+    <div class="goal-dates">
+      <p>Starting: <%= @goal.start_date %></p>
+      <p>Finishing: <%= @goal.end_date %></p>
+    </div>
+  </div>
 
-</div>
+  <div class="habits-container">
+    <h2 class="text-left ms-4 mt-3 pt-2 pb-2">Habits</h2>
+    <div class="habits-info" data-controller="habit-update">
+      <% @goal.habits.each do |h| %>
+         <%= render "habits/habits_checkbox", h: h %>
+      <% end %>
+    </div>
+  </div>
 
-<%= link_to "Edit", edit_goal_path(@goal) %>
- <%= link_to "Add Habit", new_goal_habit_path(@goal) %>
-<%= link_to "Back", dashboard_path %>
-<%= link_to "Delete", goal_path(@goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
-</div>
+
+  <div class="goal-buttons">
+    <%= link_to "Edit", edit_goal_path(@goal), class: "btn btn-gradient" %>
+    <%= link_to "Add Habit", new_goal_habit_path(@goal), class: "btn btn-gradient" %>
+    <%= link_to "Back", dashboard_path, class: "btn btn-gradient" %>
+    <%= link_to "Delete", goal_path(@goal), class: "btn btn-gradient", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
+  </div>

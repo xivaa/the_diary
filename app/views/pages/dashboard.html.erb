@@ -23,7 +23,7 @@
           </span>
           <div class="progress-value">50%</div>
       </div>
-        <%= link_to "Your progress", puzzles_path, class: "btn " %>
+        <%= link_to "Your progress", puzzles_path, class: "your-progress"%>
      </div>
   </div>
 
@@ -33,7 +33,7 @@
     <div class="habits-info" data-controller="habit-update">
       <% @habits.each do |h| %>
          <%= render "habits/habits_checkbox", h: h %>
-            <% end %>
+      <% end %>
     </div>
   </div>
 

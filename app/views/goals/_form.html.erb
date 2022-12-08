@@ -1,8 +1,9 @@
-
-<%= simple_form_for(Goal.new) do |f| %>
-  <%= f.input :name, input_html: {class: ""} %>
-  <%= f.input :description, input_html: {class: "search-bar"} %>
-  <%= f.input :start_date, as: :date, input_html: {class: "search-bar"} %>
-  <%= f.input :end_date, as: :date, input_html: {class: "search-bar"} %>
-  <%= f.submit class: "btn btn-secondary" %>
-<% end %>
+<div class="goal-form">
+  <%= simple_form_for(Goal.new) do |f| %>
+    <%= f.input :name, label: "Your Goal", placeholder: "+Add goal", input_html: {class: "new-form"} %>
+    <%= f.input :description, placeholder: "+Add description", input_html: {class: "new-form"} %>
+    <%= f.input :start_date, as: :date, input_html: {class: "new-form"} %>
+    <%= f.input :end_date, as: :date, input_html: {class: "new-form"} %>
+    <%= f.submit class: "btn btn-gradient" %>
+  <% end %>
+</div>
