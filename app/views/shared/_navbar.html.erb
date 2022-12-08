@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+<div class="navbar navbar-expand navbar-light navbar-lewagon ">
+  <div class="container-fluid ">
     <div class="img-navbar">
       <% if user_signed_in? %>
         <%= link_to dashboard_path, class: "navbar-brand" do %>
@@ -11,24 +11,19 @@
         <% end %>
       <% end %>
     </div>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+
+    <button type="button" class="btn btn-plus" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <i class="fa-solid fa-circle-plus"></i>
     </button>
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "About", about_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropup">
-            <% if current_user.photo.key.nil? %>
-                    <%= image_tag "defaultprofile", crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% else %>
-                  <%= cl_image_tag current_user.photo.key, width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% end %>
+          <i class="fa-solid fa-bars three-lines display-4 me-1 mb-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup=true></i>
+          <li class="nav-item dropup"  >
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "About", about_path, class: "dropdown-item" %>
               <%= link_to "Modify my Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
@@ -43,3 +38,9 @@
     </div>
   </div>
 </div>
+
+            <%# <% if current_user.photo.key.nil? %>
+                    <%# <%= image_tag "defaultprofile", crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown",  data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%# <% else %>
+                  <%# <%= cl_image_tag current_user.photo.key, width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%# <% end %>

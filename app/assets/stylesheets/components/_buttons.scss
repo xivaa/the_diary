@@ -1,11 +1,9 @@
 .btn-plus {
-  // background-color: black;
-  color: $gradient;
+  color: orange;
   border: none;
-  position: fixed;
-  right: 16px;
-  bottom: 90px;
-  width: 50px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  width: 60px;
   height: 50px;
   font-size: xx-large;
   z-index: 1000;
@@ -18,8 +16,8 @@
 }
 
 .btn-progress {
-  width: 365px;
-  height: 100px;
+  // width: 365px;
+  // height: 100px;
   text-decoration: none;
   border-radius: 15px;
   background: linear-gradient(35deg, #F05454 25%, #F05454 25%, #FFBF00 75%, #FFBF00 75%);
@@ -29,4 +27,8 @@
   justify-content: center;
   color: white;
   box-shadow: 0px 0px 5px gray;
+}
+
+.three-lines {
+  color: #F05454;
 }
