@@ -14,6 +14,6 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def contact
+  def upgrade
   end
 end
