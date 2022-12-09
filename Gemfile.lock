@@ -120,6 +120,7 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.2.1)
       sassc (~> 2.0)
+    geocoder (1.8.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -191,7 +192,7 @@ GEM
       activerecord (= 7.0.4)
       activestorage (= 7.0.4)
       activesupport (= 7.0.4)
-      bundler (>= 2.3.26)
+      bundler (>= 1.15.0)
       railties (= 7.0.4)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
@@ -296,6 +297,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 6.1)
+  geocoder
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
