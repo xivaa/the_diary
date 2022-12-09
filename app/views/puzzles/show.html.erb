@@ -19,7 +19,7 @@
   <% @puzzle.goals.each do |g| %>
     <%= g.name %>
     <% g.habits.each do |h| %>
-      <%= render "habits/habits_checkbox", h: h %>
+      <%= render "habits/habits_puzzle_show", h: h %>
     <% end %>
   <% end %>
   </div>
