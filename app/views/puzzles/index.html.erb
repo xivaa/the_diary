@@ -1,5 +1,10 @@
 <div class="puzzle-index d-flex flex-wrap">
-  <% @puzzles.each do |p| %>
-    <%= link_to p.date, puzzle_path(p), class: "btn btn-gradient m-3" %>
-  <% end %>
+    <div class="puzzle-container">
+        <div class="puzzles-form mt-4">
+        <h3 class="mb-2 pt-4">Pieces of my life</h3>
+          <% @puzzles.each do |p| %>
+            <%= link_to p.date.strftime('%a, %d %b %Y'), puzzle_path(p), class: "btn btn-gradient mb-4" %>
+          <% end %>
+      </div>
+    </div>
 </div>

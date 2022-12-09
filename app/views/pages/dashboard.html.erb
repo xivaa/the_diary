@@ -16,9 +16,9 @@
     <div class="circle">
     <%= @puzzles.last.completed_goals_percentage %>%
     </div>
-        <%= link_to "Your progress", puzzles_path, class: "btn"%>
-  </div>
+        <%= link_to "My progress", puzzles_path, class: "your-progress"%>
 
+  </div>
 
   <div class="habits-container">
     <h2 class="text-left ms-4 mt-3 pt-2 pb-2">Today's Habits</h2>
@@ -41,7 +41,7 @@
           <%# <% p.goals.each do |goal| %>
           <div class="goals">
             <div class="goals-card">
-                <%=link_to goal.name, goal_path(goal), class: "goal-link" %>
+                <h5><%=link_to goal.name, goal_path(goal), class: "goal-link" %></h5>
                 <div class="goal-icons">
                   <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
                   <%= render partial: "shared/editpopup", locals: { goal: goal }%>

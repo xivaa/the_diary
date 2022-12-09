@@ -22,6 +22,9 @@
 .img-navbar {
   width: 120px;
   height: 60px;
-  margin-left: -10px;
 }
 
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+}

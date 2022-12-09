@@ -11,17 +11,16 @@
 
 .btn-gradient {
  background: linear-gradient(35deg, #F05454 25%, #F05454 25%, #FFBF00 75%, #FFBF00 75%);
- border-radius: 8px;
+ border-radius: 15px;
  color: white;
 }
 
 .btn-progress {
-  // width: 365px;
-  // height: 100px;
+  width: 365px;
+  height: 100px;
   text-decoration: none;
   border-radius: 15px;
   background: linear-gradient(35deg, #F05454 25%, #F05454 25%, #FFBF00 75%, #FFBF00 75%);
-  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,12 +1,17 @@
-  <div class="goal-headline mt-4 mb-4">
-    <h2 class="text-center"><%= @goal.name %></h2>
+  <div class="headline-container">
+    <div class="goal-headline mt-4 mb-4">
+      <h2 class="text-center"><%= @goal.name %></h2>
+    </div>
   </div>
 
   <div class="goal-specifics">
-    <%= @goal.description %>
+    <h5 class="text-center"><strong>Description</strong></h5>
+    <div class="goal-description">
+      <%= @goal.description %>
+    </div>
     <div class="goal-dates">
-      <p>Starting: <%= @goal.start_date %></p>
-      <p>Finishing: <%= @goal.end_date %></p>
+      <h5><i class="fa-regular fa-calendar"></i> <%= @goal.start_date.strftime('%d %b %Y') %></h5>
+      <h5><i class="fa-regular fa-calendar"></i> <%= @goal.end_date.strftime('%d %b %Y') %></h5>
     </div>
   </div>
 
@@ -21,8 +26,8 @@
 
 
   <div class="goal-buttons">
-    <%= link_to "Edit", edit_goal_path(@goal), class: "btn btn-gradient" %>
+    <%= link_to "Edit", edit_goal_path(@goal), class: "btn btn-gradient text-dark" %>
     <%= link_to "Add Habit", new_goal_habit_path(@goal), class: "btn btn-gradient" %>
-    <%= link_to "Back", dashboard_path, class: "btn btn-gradient" %>
-    <%= link_to "Delete", goal_path(@goal), class: "btn btn-gradient", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
+    <%= link_to "Back", dashboard_path, class: "btn btn-gradient text-dark" %>
+    <%= link_to "Delete", goal_path(@goal), class: "btn btn-gradient text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
   </div>
