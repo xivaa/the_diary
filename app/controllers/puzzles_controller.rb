@@ -24,6 +24,7 @@ class PuzzlesController < ApplicationController
 
   def show
     @puzzle = Puzzle.find(params[:id])
+    @puzzle.goals.each { |g| g.is_completed? ? g.complete! : g.incomplete! }
     authorize @puzzle
   end
 
