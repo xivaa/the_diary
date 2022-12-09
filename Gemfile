@@ -55,6 +55,9 @@ gem "sassc-rails"
 gem "sidekiq"
 gem "sidekiq-failures", "~> 1.0"
 
+# geocoder
+gem "geocoder"
+
 # Whenever
 gem 'whenever', require: false
 

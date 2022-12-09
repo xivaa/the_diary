@@ -1,4 +1,4 @@
-<% if @goal.reach_limit? %>
+<% if current_user.goal.reach_limit? %>
   <p>You cant add more than 5 habits</p>
 <% else %>
 <div class="container">
