@@ -18,7 +18,7 @@ export default class extends Controller {
       body: new FormData(e.target)
     }).then(response => response.text())
     .then(data => console.log(data))
-    
+  
   }
 
   update(e) {

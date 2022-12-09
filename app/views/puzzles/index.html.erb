@@ -1,3 +1,5 @@
-<% @puzzles.each do |p| %>
-  <%= p.title %>
-<% end %>
+<div class="puzzle-index d-flex flex-wrap">
+  <% @puzzles.each do |p| %>
+    <%= link_to p.date, puzzle_path(p), class: "btn btn-gradient m-3" %>
+  <% end %>
+</div>

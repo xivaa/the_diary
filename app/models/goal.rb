@@ -9,9 +9,6 @@ class Goal < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-  def habits
-    Habit.where(goal: self)
-  end
 
   def completed_habits
     habits.where(completed: true)
