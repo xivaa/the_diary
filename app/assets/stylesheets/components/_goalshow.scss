@@ -10,6 +10,7 @@
   justify-content: space-between;
   border-radius: 15px;
   background-color: white;
+  margin-inline: 15px;
 }
 
 .goal-buttons {
@@ -18,10 +19,16 @@
 }
 
 .goal-headline {
-  width: 100vw;
   padding-top: 10px;
   padding-bottom: 10px;
   background: linear-gradient(35deg, #F05454 25%, #F05454 25%, #FFBF00 75%, #FFBF00 75%);
   border-radius: 8px;
   color: white;
+  padding-inline: 20px;
+}
+
+.headline-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

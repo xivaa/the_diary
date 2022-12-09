@@ -11,22 +11,11 @@
       <% end %>
       </div>
     </div>
-
-  <div class="puzzle mt-4">
-    <div class="btn btn-progress">
-      <div class="progress-round blue">
-          <span class="progress-left">
-                            <span class="progress-bar-round"></span>
-          </span>
-          <span class="progress-right">
-                            <span class="progress-bar-round"></span>
-          </span>
-          <div class="progress-value">50%</div>
-      </div>
-        <%= link_to "Your progress", puzzles_path, class: "your-progress"%>
-     </div>
+  <div class="button-container">
+    <div class="puzzle mt-4">
+          <%= link_to "Your progress", puzzles_path, class: "btn btn-progress" %>
+    </div>
   </div>
-
 
   <div class="habits-container">
     <h2 class="text-left ms-4 mt-3 pt-2 pb-2">Today's Habits</h2>
@@ -46,7 +35,7 @@
           <% p.goals.each do |goal| %>
           <div class="goals">
             <div class="goals-card">
-                <%=link_to goal.name, goal_path(goal), class: "goal-link" %>
+                <h5><%=link_to goal.name, goal_path(goal), class: "goal-link" %></h5>
                 <div class="goal-icons">
                   <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
                   <%= render partial: "shared/editpopup", locals: { goal: goal }%>
