@@ -4,10 +4,8 @@
   justify-content: center;
   flex-direction: column;
   margin: 10px;
-  margin-bottom: 90px;
+  // margin-bottom: 90px;
   padding: 25px;
-  border-radius: 15px;
-  background-color: #ffffff;
 }
 
 .weather {
@@ -16,8 +14,45 @@
 }
 
 .weatherwidget-io {
-  width: 100%;
+  width: 360px;
   height: 100px;
   border-radius: 15px;
+  box-shadow: 0px 0px 5px gray;
+  margin-bottom: 10px;
+}
 
+.todo-shit {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px gray;
+  width: 360px;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  padding-inline: 20px;
+}
+
+.book-otm {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px gray;
+  width: 360px;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  padding-inline: 20px;
+}
+
+.quote-otd {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px gray;
+  width: 360px;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  padding-inline: 20px;
 }
