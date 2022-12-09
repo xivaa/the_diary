@@ -1,8 +1,7 @@
       <%= simple_form_for(Habit.new) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <p>Which days are you doing it?</p>
-      <%= f.input :frequency, as: :check_boxes, collection: [["Monday", "Monday"], ["Tuesday", "Tuesday"], ["Wednesday", "Wednesday"], ["Thursday", "Thursday"], ["Friday", "Friday"], ["Saturday", "Saturday"], ["Sunday", "Sunday"]] %>
+      <%= f.input :name, placeholder: "+Add habit", input_html: {class: "new-form"} %>
+      <%= f.input :description, placeholder: "+Add description", input_html: {class: "new-form"} %>
+      <%= f.input :frequency, as: :check_boxes, label: "Which days are you doing it?", collection: [["Monday", "Monday"], ["Tuesday", "Tuesday"], ["Wednesday", "Wednesday"], ["Thursday", "Thursday"], ["Friday", "Friday"], ["Saturday", "Saturday"], ["Sunday", "Sunday"]] %>
       <%= f.association :goal, collection: current_user.puzzles.last.goals %>
       <%= f.button :submit, class: "btn btn-gradient" %>
     <% end %>
