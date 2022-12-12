@@ -27,9 +27,7 @@ class Puzzle < ApplicationRecord
     today = []
     goals.each do |goal|
       goal.habits.each do |habit|
-        if habit.today?
-          today << goal
-        end
+        today << goal if habit.today?
       end
     end
     today
@@ -37,7 +35,7 @@ class Puzzle < ApplicationRecord
 
   def completed_goals_percentage
     if goals.count > 0
-      (completed_goals.count.to_f / goals_of_today.count) * 100
+      ((completed_goals.count.to_f / goals_of_today.count) * 100).round
     else
       0
     end

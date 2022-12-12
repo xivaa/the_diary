@@ -1,4 +1,5 @@
 class HabitsController < ApplicationController
+  include ActionView::RecordIdentifier
   before_action :authenticate_user!, only: %i[new create destroy]
   before_action :set_habit, only: [:destroy]
 
@@ -37,7 +38,7 @@ class HabitsController < ApplicationController
     @habit.completed = habit_params[:completed] == "1"
     @habit.save
     respond_to do |format|
-      format.html
+      format.html { redirect_to dashboard_path, anchor: dom_id(@habit) }
       format.text { render partial: "habits/habits_checkbox", locals: { h: @habit }, formats: [:html] }
     end
   end

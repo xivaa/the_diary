@@ -51,11 +51,11 @@
                   <h5><%=link_to goal.name, goal_path(goal), class: "goal-link" %></h5>
                   <div class="goal-icons">
                    <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
-                    <%= render partial: "shared/editpopup", locals: { goal: goal }%>
+                    <%= render p partial: "shared/editpopup", locals: { goal: goal }%>
               </div>
             </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped  gradient-bg" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.completed_habits_percentage%>%"><%= goal.completed_habits_percentage.round%>%</div>
+              <div class="progress" id="<%= dom_id(goal) %>" >
+                <div data-bar-update-target="probar" class="progress-bar progress-bar-striped  gradient-bg" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.completed_habits_percentage%>%"><%= goal.completed_habits_percentage.round%>%</div>
               </div>
           </div>
           <% end %>
