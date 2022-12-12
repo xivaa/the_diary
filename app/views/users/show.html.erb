@@ -1,12 +1,25 @@
+<div class="profile-page">
+    <h1 class="text-center mb-3"><strong>Widgets</strong></h1>
     <a class="weatherwidget-io" href="https://forecast7.com/en/19d43n99d13/mexico-city/" data-label_1="MEXICO CITY" data-label_2="WEATHER" data-icons="Climacons" data-mode="Current" data-days="3" data-theme="beige" >MEXICO CITY WEATHER</a>
     <script>
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
     </script>
-<div class="profile-page">
-    <h1 class="text-center mb-3"><strong>Widgets</strong></h1>
+    <div class="book-otm">
+      <h3><strong>Book of the month</strong></h3>
+      <p>Book of the month</p>
+    </div>
+
+    <div class="quote-otd">
+      <h3><strong>Quote of the day</strong></h3>
+      <%# <h1>Quotes generator</h1>
+        <q> <%= @quote_of_day["contents"]["quotes"][0]["quote"]  </q>
+        <%# <p class="ms-4"> <%= @quote_of_day["contents"]["quotes"][0]["author"] </p> %>
+    </div>
+
     <div class="todo-shit">
       <h3 class="pt-3">weather/ news ETC ??</h3>
       <p> access to goals/puzzles</p>
+    </div>
 
   <div class="book-otm">
     <h1>Book of the month</h1>

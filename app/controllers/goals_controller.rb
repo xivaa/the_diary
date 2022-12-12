@@ -10,6 +10,7 @@ class GoalsController < ApplicationController
 
   def show
     @goal.is_completed? ? @goal.complete! : @goal.incomplete!
+    @habit = Habit.new
     authorize @goal
   end
 

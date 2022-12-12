@@ -18,14 +18,14 @@ Rails.application.routes.draw do
 
   match "/404", to: "errors#not_found", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
-  
+
   get "dashboard", to: "pages#dashboard"
   get "about", to: "pages#about"
   get "contact", to: "pages#contact"
   get "upgrade", to: "pages#upgrade"
 
   resources :puzzles, only: %i[index show new create update]
-  resources :habits, only: %i[new create show destroy]
+  resources :habits, only: %i[show destroy]
   resources :users, only: %i[show edit update destroy]
   resources :goals do
     resources :habits, only: %i[new create]
