@@ -38,7 +38,11 @@
 }
 
 .number-circle {
-  position: fixed;
-  top: 136px;
-  left: 98px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 90px;
+  margin-top: 10px;
+
 }
