@@ -31,7 +31,7 @@
         <% today.each do |g| %>
           <% g.habits.each do |h| %>
           <% if h.frequency.include?(date.strftime('%A')) %>
-            <%= render "habits/habits_checkbox", h: h %>
+            <%= render "habits/habits_dashboard", h: h %>
             <% end %>
           <% end %>
         <% end %>

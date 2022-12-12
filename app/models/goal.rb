@@ -9,14 +9,26 @@ class Goal < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-
   def completed_habits
-    habits.where(completed: true)
+    completed = []
+    habits.each do |habit|
+      if habit.today? && habit.completed
+        completed << habit
+      end
+    end
+    completed
   end
 
   def completed_habits_percentage
+    today = []
+    habits.each do |habit|
+      if habit.today?
+        today << habit
+      end
+    end
+
     if habits.count > 0
-      (completed_habits.count.to_f / habits.count) * 100
+      (completed_habits.count.to_f / today.count) * 100
     else
       0
     end
