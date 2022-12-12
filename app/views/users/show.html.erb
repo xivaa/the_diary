@@ -21,12 +21,26 @@
       <p> access to goals/puzzles</p>
     </div>
 
-    <div class="weather">
-      <%# <h1>Current weather in <%= @user_location.city %></h1>
-      <%# <p>
-        The temperature is <%= @weather_data["main"]["temp"] %>
-        <%# The conditions are <%= @weather_data["weather"][0]["description"] %>
-      <%# </p> %>
-
+  <div class="book-otm">
+    <h1>Book of the month</h1>
+    <p> <a href="https://www.goodreads.com/book/show/18144590-the-alchemist" target="_blank" class="book-link"> "The Power of Now" by Eckhart Tolle</a></p>
   </div>
+
+  <div class="quote-otd">
+    <%# <h1>Quotes generator</h1>
+      <q> <%= @quote_of_day["contents"]["quotes"][0]["quote"]  </q>
+      <%# <p class="ms-4"> <%= @quote_of_day["contents"]["quotes"][0]["author"] </p> %>
+  </div>
+
+  <div class="weather">
+    <%# <h1>Current weather in <%= @user_location.city %></h1>
+    <%# <p>
+      The temperature is <%= @weather_data["main"]["temp"] %>
+      <%# The conditions are <%= @weather_data["weather"][0]["description"] %>
+    <%# </p> %>
+  </div>
+</div>
+<div class="links d-flex flex-row gap-3">
+  <%= link_to "Dashboard", dashboard_path, class: "btn btn-gradient" %>
+  <%= link_to "My progress", puzzles_path, class: "btn btn-gradient"  %>
 </div>
