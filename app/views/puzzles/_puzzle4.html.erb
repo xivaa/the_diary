@@ -1,5 +1,5 @@
 <% if @puzzle.completed_goals.size == 0 %>
-  <%= "empty puzzle" %>
+  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870311/3%20pieces/0-3_mz8rbv.png" %>
 <% elsif @puzzle.completed_goals.size == 1 %>
   <%= "puzzle with 1 piece" %>
 <% elsif @puzzle.completed_goals.size == 2 %>
@@ -7,13 +7,5 @@
 <% elsif @puzzle.completed_goals.size == 3 %>
   <%= "puzzle with 3 pieces" %>
 <% else %>
-  <%= "puzzle completed" %>
+   <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870313/5%20pieces/full-5_udzg3g.png" %>
 <% end %>
-
-
-<div class="jigsaw">
-  <div id="piece1" class="piece"></div>
-  <div id="piece2" class="piece"></div>
-  <div id="piece3" class="piece"></div>
-  <div id="piece4" class="piece"></div>
-</div>
