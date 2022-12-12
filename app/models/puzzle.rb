@@ -14,16 +14,35 @@ class Puzzle < ApplicationRecord
   end
 
   def completed_goals
-    goals.where(completed: true)
+    completed = []
+    goals.each do |goal|
+      if goal.is_completed?
+        completed << goal
+      end
+    end
+    completed
+  end
+
+  def goals_of_today
+    today = []
+    goals.each do |goal|
+      goal.habits.each do |habit|
+        if habit.today?
+          today << goal
+        end
+      end
+    end
+    today
   end
 
   def completed_goals_percentage
     if goals.count > 0
-      (completed_goals.count.to_f / goals.count) * 100
+      (completed_goals.count.to_f / goals_of_today.count) * 100
     else
       0
     end
   end
+
 
   def completed?
     completed_goals_percentage == 100

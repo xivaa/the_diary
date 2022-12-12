@@ -10,4 +10,8 @@ class Habit < ApplicationRecord
   # respond_to do |format|
   #   format.html
   # end
+  def today?
+    date = Date.today
+    self.frequency.include?(date.strftime('%A'))
+  end
 end
