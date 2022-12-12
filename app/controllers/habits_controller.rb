@@ -14,8 +14,10 @@ class HabitsController < ApplicationController
   end
 
   def create
+    @goal = Goal.find(params[:goal_id])
     @habit = Habit.new(habit_params)
     authorize @habit
+    @habit.goal = @goal
     @habit.frequency.shift
     if @habit.save
       redirect_to dashboard_path
