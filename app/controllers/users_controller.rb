@@ -3,7 +3,6 @@ require 'net/http'
 require 'openssl'
 require 'json'
 
-
 class UsersController < ApplicationController
   def show
     @user = current_user

@@ -12,11 +12,11 @@ class PuzzlesController < ApplicationController
 
   def create
     @puzzle = Puzzle.new(puzzle_params)
+    @puzzle.date = Date.today
     @puzzle.user = current_user
     authorize @puzzle
-    # @goals = user.puzzle.goals
     if @puzzle.save
-      redirect_to puzzle_path(@puzzle)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end

@@ -1,8 +1,13 @@
 .container-puzzle-show {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  object-fit: contain;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   margin: 10px;
   margin-bottom: 90px;
 }
@@ -17,67 +22,7 @@
 }
 
 .puzzle-show-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
   border-radius: 15px;
   background-color: white;
-  margin-bottom: 10px;
   box-shadow: 0px 0px 5px gray;
-}
-
-#jigsaw {
-  position: relative;
-  width: 200px;
-  height: 200px;
-}
-
-.piece {
-  position: absolute;
-  background-color: #ffffff;
-  width: 50px;
-  height: 50px;
-}
-
-#piece1 {
-  top: 0;
-  left: 0;
-  background-image: url('logo.png');
-  object-fit: cover;
-}
-
-#piece2 {
-  top: 0;
-  left: 50px;
-  background-image: url('logo.png');
-  object-fit: cover;
-}
-
-#piece3 {
-  top: 0;
-  left: 100px;
-  background-image: url('logo.png');
-  object-fit: cover;
-}
-
-#piece4 {
-  top: 50px;
-  left: 0;
-  background-image: url('logo.png');
-  object-fit: cover;
-}
-
-#piece5 {
-  top: 50px;
-  left: 50px;
-  background-image: url('logo.png');
-  object-fit: cover;
-}
-
-#piece6 {
-  top: 50px;
-  left: 100px;
-  background-image: url('logo.png');
 }
