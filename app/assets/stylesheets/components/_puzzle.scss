@@ -2,12 +2,13 @@
   border-radius: 15px;
   background-color: white;
   text-align: center;
-  width: 300px;
+  width: 350px;
   box-shadow: 0px 0px 5px gray;
+  display: flex;
+  flex-direction: column;
 }
 
 .puzzle-container {
-display: block;
 align-items: center;
 margin: 0 auto;
 }
