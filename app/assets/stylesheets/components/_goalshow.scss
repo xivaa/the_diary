@@ -23,7 +23,8 @@
   background: linear-gradient(35deg, #F05454 25%, #F05454 25%, #FFBF00 75%, #FFBF00 75%);
   border-radius: 8px;
   color: white;
-  padding-inline: 100px;
+  padding-inline: 130px;
+  box-shadow: 0px 0px 5px gray;
 }
 
 .headline-container {
@@ -58,4 +59,8 @@ margin-inline: 20px;
 
 .abbr[title] {
   color: transparent;
+}
+
+.gs-page {
+  margin-bottom: 100px;
 }

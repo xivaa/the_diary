@@ -16,9 +16,7 @@ class Puzzle < ApplicationRecord
     today = []
     goals.each do |goal|
       goal.habits.each do |habit|
-        if habit.today?
-          today << goal
-        end
+        today << goal if habit.today?
       end
     end
     today

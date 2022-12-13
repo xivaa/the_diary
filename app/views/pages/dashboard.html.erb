@@ -1,9 +1,11 @@
 <div class="container-dashboard col-12">
-      <% date = Date.today %>
-      <%= date.strftime('%a, %d %b %Y')%>
-    <div class="welcome d-flex justify-content-between align-items-center m-2">
-      <h3 class="text-left">Hello, <%= current_user.first_name.capitalize%> !</h3>
-      <div class="photo-profile-dashboard flex-end">
+      <div class="date-dash ms-4 mt-4">
+        <% date = Date.today %>
+        <%= date.strftime('%a, %d %b %Y')%>
+      </div>
+    <div class="welcome d-flex justify-content-between align-items-center ms-4">
+      <h5 class="text-left">Hello, <%= current_user.first_name.capitalize%> !</h5>
+      <div class="photo-profile-dashboard flex-end ">
       <% if current_user.photo.key.nil? %>
       <%= link_to user_path(current_user) do %>
         <%= cl_image_tag "defaultprofile_ld01ce", class: "avatar", crop: :fill %>
@@ -19,12 +21,12 @@
   <div class="puzzle justify-content-evenly mt-4 btn btn-progress">
     <div class="progress-fat">
         <div class="progress-bar-fat progress-bar-striped" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @puzzles.last.nil? ? 0 : @puzzles.last.completed_goals_percentage %>%">
-        </div>
           <% if @puzzles.last.nil? %>
             <h6 class="number-circle">0%</h6>
           <% else %>
           <h6 class="number-circle"><%= @puzzles.last.completed_goals_percentage%>%</h6>
           <% end %>
+        </div>
       </div>
         <%= link_to "My progress", puzzles_path, class: "your-progress"%>
   </div>
@@ -56,11 +58,11 @@
                   <h5><%=link_to goal.name, goal_path(goal), class: "goal-link" %></h5>
                   <div class="goal-icons">
                    <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
-                    <%= render partial: "shared/editpopup", locals: { goal: goal }%>
+                    <%= render p partial: "shared/editpopup", locals: { goal: goal }%>
               </div>
             </div>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped  gradient-bg" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.completed_habits_percentage%>%"><%= goal.completed_habits_percentage.round%>%</div>
+              <div class="progress" id="<%= dom_id(goal) %>" >
+                <div data-bar-update-target="probar" class="progress-bar progress-bar-striped  gradient-bg" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= goal.completed_habits_percentage%>%"><%= goal.completed_habits_percentage.round%>%</div>
               </div>
           </div>
           <% end %>
