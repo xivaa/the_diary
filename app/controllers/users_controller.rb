@@ -2,6 +2,8 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 require 'json'
+require 'open-uri'
+require 'nokogiri'
 
 class UsersController < ApplicationController
   def show
@@ -30,5 +32,11 @@ class UsersController < ApplicationController
     # api_url = "https://api.openweathermap.org/data/2.5/weather?lat=#{@user_location.latitude}&lon=#{@user_location.longitude}&appid=#{api_key}"
     # response = Net::HTTP.get(URI(api_url))
     # @weather_data = JSON.parse(response)
+
+    url = "https://www.today.com/news/good-news" # the url of the web page you want to scrape
+    html = URI.open(url) # open the html of the page
+    @doc = Nokogiri::HTML(html)
+    @news = @doc.search('.tease-card__headline > a')[0]["href"]
+    @news_title = @doc.search('.tease-card__headline > a')[0].text
   end
 end
