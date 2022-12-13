@@ -1,3 +1,8 @@
+:schedule:
+  puzzle_job:
+    every: '1m'    # Runs once per minute
+    class: PuzzleJob
+
 :concurrency: 3
 :timeout: 60
 :verbose: true
