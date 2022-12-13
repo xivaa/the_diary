@@ -319,6 +319,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   mail_form (~> 1.9)
+  nokogiri
   pg (~> 1.1)
   puma (~> 5.0)
   pundit
