@@ -1,5 +1,4 @@
 .container-puzzle-show {
-  width: 350px;
   height: 350px;
   overflow: hidden;
   object-fit: contain;
@@ -7,22 +6,37 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  margin: 10px;
-  margin-bottom: 90px;
 }
 
 .puzzle-show-goals {
-  width: 100%;
   height: 100%;
   border-radius: 15px;
   background-color: white;
   margin-bottom: 10px;
   box-shadow: 0px 0px 5px gray;
+  margin-inline: 15px;
 }
 
-.puzzle-show-img {
+.puzzle-show-img img {
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 0px 5px gray;
+}
+
+.habits-ps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin-inline: 15px;
+  padding-inline: 10px;
+  margin-bottom: 10px;
+}
+
+.habits-ps h5 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-weight: 300;
+  margin-inline: 10px;
 }
