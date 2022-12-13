@@ -1,0 +1,20 @@
+.hw-form {
+  border-radius: 15px;
+  background-color: white;
+  text-align: justify;
+  width: 350px;
+  box-shadow: 0px 0px 5px gray;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.hw-form p {
+  margin-inline: 15px;
+  margin-top: 5px;
+}
+
+.hw-container {
+  margin-bottom: 120px;
+}
