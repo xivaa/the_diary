@@ -18,4 +18,7 @@ class PagesController < ApplicationController
 
   def upgrade
   end
+
+  def contact
+  end
 end
