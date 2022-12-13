@@ -1,0 +1,40 @@
+<div class="gs-page">
+    <div class="headline-container">
+      <div class="goal-headline mt-4 mb-4">
+        <h2 class="text-center"><%= @goal.name %></h2>
+      </div>
+    </div>
+
+    <div class="goal-specifics">
+      <h5 class="text-center"><strong>Description</strong></h5>
+      <div class="goal-description">
+        <%= @goal.description %>
+      </div>
+      <div class="goal-dates">
+        <h5><i class="fa-regular fa-calendar"></i> <%= @goal.start_date.strftime('%d %b %Y') %></h5>
+        <h5><i class="fa-regular fa-calendar"></i> <%= @goal.end_date.strftime('%d %b %Y') %></h5>
+      </div>
+    </div>
+
+    <div class="habits-container">
+      <h2 class="text-left ms-4 mt-3 pt-2 pb-2">Habits</h2>
+      <div class="habits-info" data-controller="habit-update">
+        <% @goal.habits.each do |h| %>
+          <%= render "habits/habits_checkbox", h: h %>
+        <% end %>
+      </div>
+    </div>
+
+      <%= render partial: "shared/newhabit", locals: { habit: @habit, goal: @goal }%>
+
+
+    <div class="goal-buttons">
+      <%= link_to "Edit", edit_goal_path(@goal), class: "btn btn-gradient text-dark" %>
+      <button type="button" class="btn btn-gradient text-dark" data-bs-toggle="modal" data-bs-target="#newhabit-popup">
+        New Habit
+      </button>
+      <%# <%= link_to "Add Habit", new_goal_habit_path(@goal), class: "btn btn-gradient" %>
+      <%= link_to "Back", dashboard_path, class: "btn btn-gradient text-dark" %>
+      <%= link_to "Delete", goal_path(@goal), class: "btn btn-gradient text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
+    </div>
+</div>

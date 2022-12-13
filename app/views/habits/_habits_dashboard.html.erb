@@ -1,0 +1,7 @@
+  <div class="habits" >
+    <h5><%= h.name %></h5>
+      <%= simple_form_for h, html: {data: {habit_update_target: "form", action: "submit->habit-update#submitForm"}} do |f| %>
+        <%= f.input :completed, as: :boolean, label: false, input_html: {class: "checkbox", id: h.id, data: { action: "click->habit-update#update" }} %>
+      <% end %>
+  </div>
+

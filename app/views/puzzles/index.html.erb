@@ -1,0 +1,14 @@
+<div class="text-center">
+  <div class="puzzle-index d-flex flex-wrap">
+      <div class="puzzle-container">
+          <div class="puzzles-form mt-4">
+          <h3 class="mb-2 pt-4">Pieces of my life</h3>
+            <% @puzzles.each do |p| %>
+              <%= link_to p.date.strftime('%a, %d %b %Y'), puzzle_path(p), class: "btn btn-gradient mb-4" %>
+            <% end %>
+        </div>
+      </div>
+  </div>
+
+  <%= link_to "Dashboard", dashboard_path, class: "btn btn-gradient mt-4" %>
+</div>

@@ -1,0 +1,48 @@
+.progress {
+  width: 100%;
+  --#{$prefix}progress-height: #{$progress-height};
+  @include rfs($progress-font-size, --#{$prefix}progress-font-size);
+  --#{$prefix}progress-bg: #{$progress-bg};
+  --#{$prefix}progress-border-radius: #{$progress-border-radius};
+  --#{$prefix}progress-box-shadow: #{$progress-box-shadow};
+  --#{$prefix}progress-bar-color: #{$progress-bar-color};
+  --#{$prefix}progress-bar-bg: #{$progress-bar-bg};
+  --#{$prefix}progress-bar-transition: #{$progress-bar-transition};
+}
+
+.progress-bar-animated {
+  @if $enable-transitions {
+    @keyframes progress-bar-stripes {
+      0% { background-position-x: $progress-height; }
+    }
+  }
+}
+
+.progress-fat {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  // border: 1px solid rgb(237, 237, 237);
+  overflow: hidden;
+  background-color: rgba(233, 233, 233, 0.2);
+
+}
+
+.progress-bar-fat {
+  width: 100%;
+  height: 100%;
+  background-color: #fa982d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-circle {
+  // position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // top: 136px;
+  // left: 98px;
+  margin-top: 10px;
+}

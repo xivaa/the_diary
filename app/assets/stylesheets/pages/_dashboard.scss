@@ -1,0 +1,138 @@
+.container-dashboard {
+  margin-bottom: 90px;
+}
+
+.goal-link {
+  text-decoration: none;
+  color: black;
+}
+
+.goal-link:hover {
+  color: gray;
+}
+
+.container-habits-checkbox {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin-inline: 15px;
+  padding-inline: 10px;
+  margin-bottom: 10px;
+}
+
+.frequency {
+  border-top: 1px solid black;
+}
+
+.habits-container {
+  border-radius: 15px;
+  background-color: white;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 5px gray;
+  margin-inline: 15px;
+}
+
+.habits {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin-inline: 15px;
+  padding-inline: 10px;
+  margin-bottom: 10px;
+}
+
+.habits-info {
+  padding-bottom: 5px;
+}
+
+.goals-container {
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 5px gray;
+  margin-bottom: 10px;
+  margin-inline: 15px;
+}
+
+.goals-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// .show {
+//   display: block;
+//   // margin: 80px auto;
+//   padding: 10px;
+//   padding-top: 80px;
+// }
+
+.goals {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin-inline: 15px;
+  padding-inline: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+background-color: transparent;
+height: 32px;
+width: 32px;
+border: 2px solid black;
+padding-top: 18px;
+}
+
+.form-check-input[type="checkbox"] {
+border-radius: .65em;
+}
+
+.form-check-input {
+  margin-top: 1.10em;
+}
+
+.form-check-input.is-valid:checked {
+  background-color: #FA9D2A;
+  border-color: transparent;
+}
+
+.form-check-input:checked {
+  background-color: #FA9D2A;
+  border-color: transparent;
+}
+
+.habits h5 {
+  font-size: 16px;
+}
+
+.goals-card h5 {
+  font-size: 16px;
+}
+
+.your-progress {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 15px;
+}
+
+.button-container {
+  justify-content: center;
+  display: flex;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  background-color: #FA9D2A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-profile-dashboard {
+  margin-right: 17px;
+  margin-top: -27px;
+}

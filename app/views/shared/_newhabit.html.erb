@@ -1,0 +1,17 @@
+<%# <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#newhabit-popup">
+ New Habit</i>
+</button> %>
+
+<div class="modal fade" id="newhabit-popup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog pop-up">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Habit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+           <%= render partial: "habits/newform", locals: {habit: habit, goal: goal} %>
+      </div>
+    </div>
+  </div>
+</div>
