@@ -1,2 +1,24 @@
-<h2>How it works</h2>
-<%= render "form", puzzle: @puzzle %>
+<div class="hw-container text-center justify-content-center">
+  <h2 class="mt-3">How it works</h2>
+  <div class="hw-form">
+    <p><strong>.SELF</strong> will help you create goals and keep track of your progress.</p>
+  </div>
+  <div class="hw-form">
+    <p>Each day will represent a puzzle. The puzzle will be completed if you do all the tasks you
+    set for yourslef, whenever you don't finish your tasks you get an incomplete puzzle.</p>
+  </div>
+  <div class="hw-form">
+    <p>Each puzzle has goals, and this goals have habits. If you want to reach a goal,
+    whatever it is, you must do specific actions that will bring you closer to achieving that goal.
+    Just as the goals need those habits to become true, the goals you set for yourself today are the ones that
+    will shape your future. </p>
+  </div>
+  <div class="hw-form">
+    <p><strong>"If you fail to plan... you are planning to fail"</strong></p>
+    <p>- Benjamin Franklin</p>
+  </div>
+  <div class="hw-form">
+    <p>Read the About page to understand better our philosophy and the jigsaw analogy.</p>
+  </div>
+  <%= render "form", puzzle: @puzzle %>
+</div>

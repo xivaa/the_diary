@@ -18,7 +18,7 @@
 
   <div class="puzzle-show-goals">
   <% @puzzle.goals.each do |g| %>
-    <h3 class="ms-4"><%= g.name %></h3>
+    <h3 class="ms-4 pt-2"><%= g.name %></h3>
     <% g.habits.each do |h| %>
       <%= render "habits/habits_puzzle_show", h: h %>
     <% end %>
