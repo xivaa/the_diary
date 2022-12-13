@@ -1,3 +1,7 @@
+<%= link_to dashboard_path do %>
+<i class='fa-solid fa-chevron-left'></i>
+<% end %>
+
 <div class="gs-page">
     <div class="headline-container">
       <div class="goal-headline mt-4 mb-4">
@@ -34,7 +38,6 @@
         New Habit
       </button>
       <%# <%= link_to "Add Habit", new_goal_habit_path(@goal), class: "btn btn-gradient" %>
-      <%= link_to "Back", dashboard_path, class: "btn btn-gradient text-dark" %>
       <%= link_to "Delete", goal_path(@goal), class: "btn btn-gradient text-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@goal).destroy?%>
     </div>
 </div>
