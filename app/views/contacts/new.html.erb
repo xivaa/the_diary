@@ -1,8 +1,17 @@
-<div class="">
-    <h1 class="text-4xl text-center">Contact Us</h1>
-    <hr>
+<%= link_to dashboard_path do %>
+<i class='fa-solid fa-chevron-left'></i>
+<% end %>
+
+  <div class="headline-container">
+      <div class="goal-headline mt-4 mb-4">
+        <h3 class="text-4xl text-center">Contact Us</h3>
+      </div>
+  </div>
+
+<div class="contact-container">
     <p>We'd love to hear from you. Send us a message below.</p>
 
+  <div class="contact-form-container">
     <%= form_for @contact do |form| %>
 
     <% if @contact.errors.any? %>
@@ -17,19 +26,17 @@
         </div>
     <% end %>
 
-
-  <div class="">
-    <div class="field mb-4 d-flex flex-column ">
+    <div class="field mb-4 d-flex flex-column text-center ">
         <%= form.label :name %>
         <%= form.text_field :name, class: "contact-form" %>
     </div>
 
-    <div class="field mb-4 d-flex flex-column">
+    <div class="field mb-4 d-flex flex-column text-center">
         <%= form.label :email %>
         <%= form.email_field :email, class: "contact-form" %>
     </div>
 
-    <div class="field mb-4 d-flex flex-column">
+    <div class="field mb-4 d-flex flex-column text-center">
         <%= form.label :message %>
         <%= form.text_area :message, class: "contact-form" %>
     </div>
@@ -38,10 +45,10 @@
         <%= form.label :nickname %>
         <%= form.text_field :nickname %>
     </div>
+  </div>
+</div>
 
-    <div class="actions mt-4">
+    <div class="actions mt-4 text-center">
         <%= form.submit "Send Message", class: "btn btn-gradient" %>
     </div>
-    </div>
     <% end %>
-</div>
