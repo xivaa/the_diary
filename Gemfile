@@ -61,6 +61,9 @@ gem "sidekiq-scheduler"
 # geocoder
 gem "geocoder"
 
+# nokogiri
+gem "nokogiri"
+
 # Whenever
 gem 'whenever', require: false
 
