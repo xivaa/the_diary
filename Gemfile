@@ -55,6 +55,9 @@ gem "sassc-rails"
 gem "sidekiq"
 gem "sidekiq-failures", "~> 1.0"
 
+# Sidekiq Scheduler
+gem "sidekiq-scheduler"
+
 # geocoder
 gem "geocoder"
 

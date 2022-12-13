@@ -1,5 +1,4 @@
 class PuzzlesController < ApplicationController
-
   def index
     @puzzles = Puzzle.all
     @puzzles = policy_scope(Puzzle)

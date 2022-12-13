@@ -6,7 +6,7 @@ set :environment, "development"
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+set :output, "/path/to/my/cron_log.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -14,9 +14,8 @@ set :environment, "development"
 #   rake "some:great:rake:task"
 # end
 #
-every 1.day, at: '12:00 pm' do
+every 2.minutes do
   runner "Puzzle.create_a_new_puzzle"
 end
-
 
 # Learn more: http://github.com/javan/whenever
