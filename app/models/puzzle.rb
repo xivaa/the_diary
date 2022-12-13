@@ -47,7 +47,7 @@ class Puzzle < ApplicationRecord
     completed_goals_percentage == 100
   end
 
-  def create_a_new_puzzle
+  def perform
     new_puzzle = Puzzle.new
     new_puzzle.title = "#{Date.today}"
     new_puzzle.date = Date.today
