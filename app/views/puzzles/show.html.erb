@@ -1,26 +1,31 @@
-<div class="container-puzzle-show">
-  <div class="puzzle-show-img">
-    <% if @puzzle.goals.size == 1 %>
-      <%= render "puzzle1" %>
-    <% elsif @puzzle.goals.size == 2 %>
-      <%= render "puzzle2" %>
-    <% elsif @puzzle.goals.size == 3 %>
-      <%= render "puzzle3" %>
-    <% elsif @puzzle.goals.size == 4 %>
-      <%= render "puzzle4" %>
-    <% elsif @puzzle.goals.size == 5 %>
-      <%= render "puzzle5" %>
-    <% else %>
-      <%= "No goals today" %>
-    <% end %>
+<div class="ps-page">
+  <div class="puzzle-headline mt-4 mb-4">
+    <p class="text-center"><%= @puzzle.date.strftime('%d %B %Y') %></p>
   </div>
-</div>
+  <div class="container-puzzle-show">
+    <div class="puzzle-show-img">
+      <% if @puzzle.goals.size == 1 %>
+        <%= render "puzzle1" %>
+      <% elsif @puzzle.goals.size == 2 %>
+        <%= render "puzzle2" %>
+      <% elsif @puzzle.goals.size == 3 %>
+        <%= render "puzzle3" %>
+      <% elsif @puzzle.goals.size == 4 %>
+        <%= render "puzzle4" %>
+      <% elsif @puzzle.goals.size == 5 %>
+        <%= render "puzzle5" %>
+      <% else %>
+        <%= "No goals today" %>
+      <% end %>
+    </div>
+  </div>
 
-  <div class="puzzle-show-goals">
-  <% @puzzle.goals.each do |g| %>
-    <h3 class="ms-4 pt-2"><%= g.name %></h3>
-    <% g.habits.each do |h| %>
-      <%= render "habits/habits_puzzle_show", h: h %>
+    <div class="puzzle-show-goals">
+    <% @puzzle.goals.each do |g| %>
+      <h3 class="ms-4 pt-2"><%= g.name %></h3>
+      <% g.habits.each do |h| %>
+        <%= render "habits/habits_puzzle_show", h: h %>
+      <% end %>
     <% end %>
-  <% end %>
-  </div>
+    </div>
+</div>
