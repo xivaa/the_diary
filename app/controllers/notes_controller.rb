@@ -1,15 +1,20 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create, :destroy]
-  skip_after_action :verify_authorized, only: [:index, :create, :destroy]
+  skip_after_action :verify_authorized, only: [:index, :all, :create, :destroy]
 
   def index
-    @notes = policy_scope(Note)
+    @notes = policy_scope(Note).sort_by { |n| n.created_at  }.last(3).reverse
     @note = Note.new
     @note.user = current_user
     # authorize @note
   end
 
+  def all
+    @notes = policy_scope(Note).sort_by { |n| n.created_at  }.reverse
+  end
+
   def create
+    @notes = policy_scope(Note).sort_by { |n| n.created_at  }.last(3).reverse
     @note = Note.new(note_params)
     @note.user = current_user
     @note.date = Date.today
@@ -19,7 +24,7 @@ class NotesController < ApplicationController
         format.html { redirect_to notes_path }
         format.json # Follow the classic Rails flow and look for a create.json view
       else
-        format.html { render "notes/index", status: :unprocessable_entity }
+        format.html { render "notes/index", status: :unprocessable_entity, notes: @notes }
         format.json # Follow the classic Rails flow and look for a create.json view
       end
     end

@@ -61,7 +61,7 @@
               <div class="goals-card">
                   <h5><%=link_to goal.name, goal_path(goal), class: "goal-link" %></h5>
                   <div class="goal-icons">
-                   <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(goal).destroy?%>
+                   <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
                     <%= render p partial: "shared/editpopup", locals: { goal: goal }%>
               </div>
             </div>
