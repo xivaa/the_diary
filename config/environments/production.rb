@@ -64,6 +64,12 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { :host => 'https://dotself.herokuapp.com' }
+  Rails.application.routes.default_url_options[:host] = 'https://dotself.herokuapp.com'
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
