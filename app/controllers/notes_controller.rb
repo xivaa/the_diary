@@ -10,7 +10,7 @@ class NotesController < ApplicationController
   end
 
   def all
-    @notes = policy_scope(Note).sort_by { |n| n.created_at  }.reverse
+    @notes = policy_scope(Note).where(user: current_user).sort_by { |n| n.created_at  }.reverse
   end
 
   def create
