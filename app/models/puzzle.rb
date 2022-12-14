@@ -1,6 +1,6 @@
 class Puzzle < ApplicationRecord
   belongs_to :user
-  has_many :goals
+  has_many :goals, dependent: :destroy
   has_many :habits, through: :goals
 
   has_one_attached :photo
