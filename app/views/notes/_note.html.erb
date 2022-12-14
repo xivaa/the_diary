@@ -1,0 +1,14 @@
+<div class="items-container">
+  <div class="headers">
+    <div class="date">
+      <%= note.date.strftime('%d %B %Y') %>
+    </div>
+    <div class="bin">
+      <%= link_to icon("fa-solid", "trash"), note_path(note), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+    </div>
+  </div>
+
+  <div class="text">
+    <%= note.text %>
+  </div>
+</div>

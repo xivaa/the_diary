@@ -5,7 +5,10 @@
 <div class="gs-page">
     <div class="headline-container">
       <div class="goal-headline mt-4 mb-4">
-        <h2 class="text-center"><%= @goal.name %></h2>
+        <h3 class="ms-4 mt-1"><%= @goal.name %></h3>
+          <div class="3dots ms-4">
+           <%= render p partial: "shared/editpopup", locals: { goal: @goal }%>
+          </div>
       </div>
     </div>
 
@@ -34,7 +37,7 @@
 
     <div class="goal-buttons">
       <%= link_to "Edit", edit_goal_path(@goal), class: "btn btn-gradient text-ligth" %>
-      <button type="button" class="btn btn-gradient text-ligth" data-bs-toggle="modal" data-bs-target="#newhabit-popup">
+      <button type="button" class="btn btn-gradient text-light" data-bs-toggle="modal" data-bs-target="#newhabit-popup">
         New Habit
       </button>
       <%# <%= link_to "Add Habit", new_goal_habit_path(@goal), class: "btn btn-gradient" %>

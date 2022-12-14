@@ -22,11 +22,13 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   get "about", to: "pages#about"
   get "upgrade", to: "pages#upgrade"
+  get "notes/all", to: "notes#all"
 
   resources :contacts, only: [:new, :create ] # new_contact_path /contacts/new
 
   get 'contacts/sent'
 
+  resources :notes, only: %i[index create destroy]
   resources :puzzles, only: %i[index show new create update]
   resources :habits, only: %i[show destroy]
   resources :users, only: %i[show edit update destroy]

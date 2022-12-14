@@ -1,0 +1,29 @@
+<%# <img src="https://www.fichier-pdf.fr/2017/04/26/feuille-lignee-type-papier-a-lettre/preview-feuille-lignee-type-papier-a-lettre-1.jpg" alt="paper" class="paper-img"> %>
+<div class="index-notes">
+  <%= link_to dashboard_path do %>
+    <i class='fa-solid fa-chevron-left'></i>
+  <% end %>
+
+  <div class="headline-container">
+    <div class="goal-headline mt-4 mb-4">
+      <h3 class="ms-4 mt-1">My Journal</h3>
+    </div>
+  </div>
+
+  <div data-controller="insert-in-list">
+    <div data-insert-in-list-target="items" >
+      <% @notes.last(3).each do |note| %>
+        <p class="list-items">
+          <%= render "notes/note", note: note %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="text-center">
+      <%= link_to "See all", "notes/all", class: "btn btn-gradient" %>
+    </div>
+  </div>
+</div>
+    <div class="note-form text-center">
+      <%= render "notes/form", note: @note %>
+    </div>
