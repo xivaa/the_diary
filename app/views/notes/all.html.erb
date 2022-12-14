@@ -1,0 +1,17 @@
+<%= link_to :back do %>
+<i class='fa-solid fa-chevron-left'></i>
+<% end %>
+
+<div class="headline-container">
+    <div class="goal-headline mt-4 mb-4">
+      <h3 class="ms-4 mt-1">My Journal</h3>
+    </div>
+</div>
+
+<div class="notes-container">
+  <% @notes.each do |note| %>
+    <p class="list-items">
+      <%= render "notes/note", note: note %>
+    </p>
+  <% end %>
+</div>

@@ -1,3 +1,7 @@
+.index-notes {
+  margin-bottom: 280px;
+}
+
 .list-items {
   list-style: none;
   display: flex;
@@ -7,15 +11,54 @@
 }
 
 .items-container {
-
-  height: 100px;
+  font-family: $notes-font;
+  font-size: larger;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   flex-wrap: wrap;
   border-radius: 15px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   margin-bottom: 10px;
+  margin-inline: 15px;
+  padding: 15px;
   box-shadow: 0px 0px 5px gray;
-  background-size: cover;
+}
+.headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+.bin {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.notes-container {
+  margin-bottom: 90px;
+}
+
+.paper-img {
+  width: 100vw;
+  height: 400vw;
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  background-size:auto;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("https://www.fichier-pdf.fr/2017/04/26/feuille-lignee-type-papier-a-lettre/preview-feuille-lignee-type-papier-a-lettre-1.jpg");
+  // background-image: url("https://www.fichier-pdf.fr/2017/04/26/feuille-lignee-type-papier-a-lettre/preview-feuille-lignee-type-papier-a-lettre-1.jpg");
+}
+
+.note-form {
+  background-color: rgba(237, 229, 217, 1);
+  position: fixed;
+  bottom: 76px;
+  width: 100%;
+  padding: 16px;
+  // margin-left: 15px;
 }
