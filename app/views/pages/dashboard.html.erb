@@ -7,13 +7,13 @@
       <h5 class="text-left">Hello, <%= current_user.first_name.capitalize%> !</h5>
       <div class="photo-profile-dashboard flex-end ">
       <% if current_user.photo.key.nil? %>
-      <%= link_to user_path(current_user) do %>
-        <%= cl_image_tag("defaultprofile_vkmsk9.jpg", class: "avatar", crop: :fill) %>
-        <% end %>
-      <% else %>
         <%= link_to user_path(current_user) do %>
-        <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill %>
-        <% end %>
+          <%= cl_image_tag("defaultprofile_vkmsk9.jpg", class: "avatar", crop: :fill) %>
+          <% end %>
+      <% else %>
+          <%= link_to user_path(current_user) do %>
+          <%= cl_image_tag(current_user.photo.key, class: "avatar", crop: :fill) %>
+          <% end %>
       <% end %>
       </div>
     </div>
