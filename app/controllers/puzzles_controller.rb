@@ -13,6 +13,7 @@ class PuzzlesController < ApplicationController
     @puzzle = Puzzle.new(puzzle_params)
     @puzzle.date = Date.today
     @puzzle.user = current_user
+    @puzzle.goals = current_user.goals
     authorize @puzzle
     if @puzzle.save
       redirect_to dashboard_path
