@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   get 'errors/not_found'
   get 'errors/internal_server_error'
-  require "sidekiq/web"
-  authenticate :user, ->(user) { user.admin? } do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  
   devise_for :users, controllers: { registrations: "registrations" }
   devise_scope :user do
     authenticated :user do
