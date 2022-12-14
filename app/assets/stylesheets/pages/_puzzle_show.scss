@@ -1,5 +1,4 @@
 .container-puzzle-show {
-  height: 350px;
   overflow: hidden;
   object-fit: contain;
   display: flex;
@@ -15,12 +14,14 @@
   margin-bottom: 10px;
   box-shadow: 0px 0px 5px gray;
   margin-inline: 15px;
+  margin-top: 16px;
 }
 
 .puzzle-show-img img {
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 0px 5px gray;
+  margin-bottom: 10px;
 }
 
 .habits-ps {
@@ -39,4 +40,20 @@
   margin-bottom: 2px;
   font-weight: 300;
   margin-inline: 10px;
+}
+
+.puzzle-headline {
+  padding-top: 22px;
+  padding-bottom: 10px;
+  background: linear-gradient(35deg, #F05454 25%, #F05454 25%, #FFBF00 75%, #FFBF00 75%);
+  border-radius: 15px;
+  color: white;
+  padding-inline: 80px;
+  box-shadow: 0px 0px 5px gray;
+  margin-inline: 15px;
+}
+
+.ps-page {
+  margin-top: 25px;
+  margin-bottom: 90px;
 }
