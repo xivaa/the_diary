@@ -1,0 +1,16 @@
+<div data-controller="insert-in-list">
+    <ul>
+      <% @notes.each do |note| %>
+      <div class="items-container">
+      <div data-insert-in-list-target="items" >
+        <li class="list-items">
+          <%= note.date %>
+          <%= note.text %>
+          <%= link_to icon("fa-solid", "trash"), note_path(note), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+        </li>
+      </div>
+      </div>
+      <% end %>
+    </ul>
+  <%= render "new" %>
+</div>

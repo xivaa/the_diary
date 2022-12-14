@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get 'contacts/sent'
 
+  resources :notes, only: %i[index create destroy]
   resources :puzzles, only: %i[index show new create update]
   resources :habits, only: %i[show destroy]
   resources :users, only: %i[show edit update destroy]
