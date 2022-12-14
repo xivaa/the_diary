@@ -4,5 +4,5 @@
                       action: "submit->insert-in-list#send"
                     } do |f| %>
   <%= f.input :text, as: :text, label: "Today's thoughts" %>
-  <%= f.button :submit, class: "btn btn-gradient"%>
+  <%= f.button :submit, value: "Add", class: "btn btn-gradient"%>
 <% end %>
