@@ -62,7 +62,7 @@
                   <h5><%=link_to goal.name, goal_path(goal), class: "goal-link" %></h5>
                   <div class="goal-icons">
                    <%= link_to icon("fa-solid", "trash"), goal_path(goal), class: "text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
-                    <%= render p partial: "shared/editpopup", locals: { goal: goal }%>
+                    <%= render partial: "shared/editpopup", locals: { goal: goal }%>
               </div>
             </div>
               <div class="progress" id="<%= dom_id(goal) %>" >
