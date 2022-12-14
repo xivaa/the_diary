@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   skip_after_action :verify_authorized, only: [:index, :all, :create, :destroy]
 
   def index
-    @notes = policy_scope(Note).sort_by { |n| n.created_at  }.last(3).reverse
+    @notes = policy_scope(Note).where(user: current_user).sort_by { |n| n.created_at  }.last(3).reverse
     @note = Note.new
     @note.user = current_user
     # authorize @note
