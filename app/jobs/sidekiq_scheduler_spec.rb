@@ -1,4 +1,3 @@
-require "rails_helper"
 require "fugit"
 
 RSpec.describe "sidekiq-scheduler" do
