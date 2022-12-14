@@ -51,13 +51,6 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "sassc-rails"
 
-# sidekiq
-gem "sidekiq"
-gem "sidekiq-failures", "~> 1.0"
-
-# Sidekiq Scheduler
-gem "sidekiq-scheduler"
-
 # geocoder
 gem "geocoder"
 
