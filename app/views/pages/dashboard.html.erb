@@ -8,7 +8,7 @@
       <div class="photo-profile-dashboard flex-end ">
       <% if current_user.photo.key.nil? %>
       <%= link_to user_path(current_user) do %>
-        <%= cl_image_tag "defaultprofile_ld01ce", class: "avatar", crop: :fill %>
+        <%= cl_image_tag("defaultprofile_ld01ce.jpg"), class: "avatar", crop: :fill %>
         <% end %>
       <% else %>
         <%= link_to user_path(current_user) do %>
