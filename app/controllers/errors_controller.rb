@@ -4,5 +4,6 @@ class ErrorsController < ApplicationController
   end
 
   def internal_server_error
+    render status: 500
   end
 end
