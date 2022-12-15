@@ -1,9 +1,9 @@
 <% if @puzzle.completed_goals.size == 0 %>
-  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870311/3%20pieces/0-3_mz8rbv.png" %>
+  <%= cl_image_tag("3pz-0_zfamdd.png") %>
 <% elsif @puzzle.completed_goals.size == 1 %>
-  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870311/3%20pieces/1-3_qf7mmh.png" %>
+  <%= cl_image_tag("3pz-1_zplcbk.png") %>
 <% elsif @puzzle.completed_goals.size == 2 %>
-  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870312/3%20pieces/2-3_njmwci.png" %>
+  <%= cl_image_tag("3pz-2_hgwgm2.png") %>
 <% else %>
-  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870313/5%20pieces/full-5_udzg3g.png" %>
+  <%= cl_image_tag("3pz-3_x3395q.png") %>
 <% end %>
