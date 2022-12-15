@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
 
   def index
     @goals = Goal.all
-    @goals = policy_scope(Goal)
+    @goals = policy_scope(Goal).where(user: current_user)
   end
 
   def show
