@@ -1,7 +1,7 @@
 <% if @puzzle.completed_goals.size == 0 %>
-  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870311/3%20pieces/0-3_mz8rbv.png" %>
+  <%= cl_image_tag("2pz-0_x9sebb.png") %>
 <% elsif @puzzle.completed_goals.size == 1 %>
-  <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870312/2%20pieces/1-2_ye1j6n.png" %>
+  <%= cl_image_tag("2pz-1_nh5rzd.png") %>
 <% else %>
-    <%= cl_image_tag "https://res.cloudinary.com/df2jp0y94/image/upload/c_thumb,w_300,g_face/v1670870313/5%20pieces/full-5_udzg3g.png" %>
+    <%= cl_image_tag("2pz-2_fq4da4.png") %>
 <% end %>
