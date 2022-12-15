@@ -1,7 +1,7 @@
 class PuzzlesController < ApplicationController
   def index
     @puzzles = Puzzle.all
-    @puzzles = policy_scope(Puzzle)
+    @puzzles = policy_scope(Puzzle).where(user: current_user)
   end
 
   def new
