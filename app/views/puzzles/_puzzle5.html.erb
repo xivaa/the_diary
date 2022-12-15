@@ -1,13 +1,13 @@
 <% if @puzzle.completed_goals.size == 0 %>
-  <%= cl_image_tag("5pz-0_w3bmwe.png") %>
+  <%= cl_image_tag "5pz-0_w3bmwe.png" %>
 <% elsif @puzzle.completed_goals.size == 1 %>
-  <%= cl_image_tag("5pz-1_pvug5r.png") %>
+  <%= cl_image_tag "5pz-1_pvug5r.png" %>
 <% elsif @puzzle.completed_goals.size == 2 %>
-  <%= cl_image_tag("5pz-2_i3x49t.png") %>
+  <%= cl_image_tag "5pz-2_i3x49t.png" %>
 <% elsif @puzzle.completed_goals.size == 3 %>
-  <%= cl_image_tag("5pz-3_sxqajk.png") %>
+  <%= cl_image_tag "5pz-3_sxqajk.png" %>
 <% elsif @puzzle.completed_goals.size == 4 %>
-  <%= cl_image_tag("5pz-4_yynlrm.png") %>
+  <%= cl_image_tag "5pz-4_yynlrm.png" %>
 <% else %>
-    <%= cl_image_tag("5pz-5_kfptuo.png") %>
+    <%= cl_image_tag "5pz-5_kfptuo.png" %>
 <% end %>
