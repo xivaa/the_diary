@@ -1,0 +1,4 @@
+meta_product_name: ".SELF"
+meta_title: ".SELF - Take care of your life"
+meta_description: ".SELF is an app that will help you create goals and keep track of your progress"
+meta_image: "selflogo_prev_ui.png" # should exist in `app/assets/images/`
