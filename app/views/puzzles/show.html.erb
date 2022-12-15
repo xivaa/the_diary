@@ -8,15 +8,15 @@
   </div>
   <div class="container-puzzle-show">
     <div class="puzzle-show-img">
-      <% if @puzzle.goals.size == 1 %>
+      <% if @puzzle.goals_of_today.size == 1 %>
         <%= render "puzzle1" %>
-      <% elsif @puzzle.goals.size == 2 %>
+      <% elsif @puzzle.goals_of_today.size == 2 %>
         <%= render "puzzle2" %>
-      <% elsif @puzzle.goals.size == 3 %>
+      <% elsif @puzzle.goals_of_today.size == 3 %>
         <%= render "puzzle3" %>
-      <% elsif @puzzle.goals.size == 4 %>
+      <% elsif @puzzle.goals_of_today.size == 4 %>
         <%= render "puzzle4" %>
-      <% elsif @puzzle.goals.size == 5 %>
+      <% elsif @puzzle.goals_of_today.size == 5 %>
         <%= render "puzzle5" %>
       <% else %>
         <%= "No goals today" %>
@@ -25,7 +25,7 @@
   </div>
 
     <div class="puzzle-show-goals">
-    <% @puzzle.goals.each do |g| %>
+    <% @puzzle.goals_of_today.each do |g| %>
       <h3 class="ms-4 pt-2"><%= g.name %></h3>
       <% g.habits.each do |h| %>
         <%= render "habits/habits_puzzle_show", h: h %>
