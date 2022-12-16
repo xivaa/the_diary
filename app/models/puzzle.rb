@@ -11,12 +11,12 @@ class Puzzle < ApplicationRecord
   def goals
     Goal.where(puzzle: self)
   end
-
+  # if habit.today?
   def goals_of_today
     today = []
     goals.each do |goal|
       goal.habits.each do |habit|
-        today << goal if habit.today?
+        today << goal
       end
     end
     today
