@@ -11,7 +11,7 @@ class PuzzlesController < ApplicationController
 
   def create
     @puzzle = Puzzle.new(puzzle_params)
-    # @puzzle.date = Date.today
+    @puzzle.date = Date.today
     @puzzle.user = current_user
     @puzzle.goals = current_user.goals
     authorize @puzzle

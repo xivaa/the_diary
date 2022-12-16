@@ -1,6 +1,6 @@
 <%= simple_form_for(puzzle) do |f| %>
   <%# <%= f.input :title, input_html: {class: ""} %>
-  <%= f.date_field :date %>
-<%# , value: Date.today, type: "hidden" %>
+  <%= f.date_field :date, value: Date.today, type: "hidden" %>
+
   <%= f.submit class: "btn btn-gradient", value: "Get started" %>
 <% end %>
