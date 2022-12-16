@@ -8,9 +8,9 @@
   </div>
   <div class="container-puzzle-show">
     <div class="puzzle-show-img">
-      <% if @puzzle.goals.size == 1 %>
+      <% if @puzzle.goals_of_today.size == 1 %>
         <%= render "puzzle1" %>
-      <% elsif @puzzle.goals.size == 2 %>
+      <% elsif @puzzle.goals_of_today.size == 2 %>
         <%= render "puzzle2" %>
       <% elsif @puzzle.goals_of_today.size == 3 %>
         <%= render "puzzle3" %>
